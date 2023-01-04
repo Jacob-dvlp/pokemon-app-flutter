@@ -11,6 +11,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       getPages: AppRoutes.pages,
+      debugShowCheckedModeBanner: false,
       home: const SplashscreenPage(),
     );
   }

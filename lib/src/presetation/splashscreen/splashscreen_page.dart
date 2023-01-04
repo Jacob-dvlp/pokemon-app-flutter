@@ -12,7 +12,7 @@ class SplashscreenPage extends GetView<SplashscreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.colorBackgorundOne,
+      backgroundColor: AppTheme.colorBackgorundprimary,
       body: const SplashscreenBodyWidget(),
     );
   }
