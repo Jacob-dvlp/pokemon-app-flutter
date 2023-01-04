@@ -9,7 +9,7 @@ class ApiResponse {
   final int count;
   final String next;
   final dynamic previous;
-  final List<Result> results;
+  final List<ResultApi> results;
   ApiResponse({
     required this.count,
     required this.next,
@@ -22,7 +22,7 @@ class ApiResponse {
         next: json["next"],
         previous: json["previous"],
         results:
-            List<Result>.from(json["results"].map((x) => Result.fromJson(x))),
+            List<ResultApi>.from(json["results"].map((x) => ResultApi.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {

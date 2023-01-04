@@ -133,7 +133,7 @@ class HomeHeaderWidgetCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 30.0, top: 23),
             child: Text(
-              'Tipo',
+              ContantsTexts.textTipoHeaderHome,
               style: GoogleFonts.nunito(
                 color: AppTheme.colorSecundary,
                 fontSize: 16,

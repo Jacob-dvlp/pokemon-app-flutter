@@ -1,5 +1,5 @@
-class Result {
-  Result({
+class ResultApi {
+  ResultApi({
     required this.name,
     required this.url,
   });
@@ -7,7 +7,7 @@ class Result {
   final String name;
   final String url;
 
-  factory Result.fromJson(Map<String, dynamic> json) => Result(
+  factory ResultApi.fromJson(Map<String, dynamic> json) => ResultApi(
         name: json["name"],
         url: json["url"],
       );

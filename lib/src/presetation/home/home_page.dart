@@ -9,10 +9,15 @@ class HomePage extends GetView<HomeController> {
   static String routName = '/home';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: const [HomeHeaderWidgetCard()],
-      ),
+    return GetBuilder<HomeController>(
+      init: HomeController(getPokemonProvider: Get.find()),
+      builder: (controller) {
+        return Scaffold(
+          body: Column(
+            children: const [HomeHeaderWidgetCard()],
+          ),
+        );
+      },
     );
   }
 }
