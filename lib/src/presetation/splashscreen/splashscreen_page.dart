@@ -1,16 +1,19 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import './splashscreen_controller.dart';
+import 'package:get/get.dart';
+
+import '../../../theme/app_theme.dart';
+import 'custom_body_widget/splashscreen_body_widget.dart';
+import 'splashscreen_controller.dart';
 
 class SplashscreenPage extends GetView<SplashscreenController> {
-    
-    const SplashscreenPage({Key? key}) : super(key: key);
+  const SplashscreenPage({Key? key}) : super(key: key);
+  static String routName = "/";
 
-    @override
-    Widget build(BuildContext context) {
-        return Scaffold(
-            appBar: AppBar(title: const Text('SplashscreenPage'),),
-            body: Container(),
-        );
-    }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppTheme.colorBackgorundOne,
+      body: const SplashscreenBodyWidget(),
+    );
+  }
 }

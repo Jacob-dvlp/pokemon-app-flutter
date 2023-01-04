@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
+import 'routes/app_routes.dart';
 import 'src/presetation/splashscreen/splashscreen_page.dart';
 
 class AppWidget extends StatelessWidget {
@@ -8,8 +9,9 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
-      home: SplashscreenPage(),
+    return GetMaterialApp(
+      getPages: AppRoutes.pages,
+      home: const SplashscreenPage(),
     );
   }
 }
