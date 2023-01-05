@@ -7,7 +7,7 @@ class GetPokemonProvider {
     required this.getPokemonI,
   });
 
-  Future<List<CategoryModel?>> getCategory() async {
+  Future<List<ResultType?>> getCategory() async {
     return getPokemonI.getCategory();
   }
 }

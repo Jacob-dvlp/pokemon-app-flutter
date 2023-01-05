@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../../utils/url/base_url.dart';
 import '../interface/get_pokemon_i.dart';
 import '../model/category_model.dart';
 import '../model/result_model.dart';
@@ -15,15 +16,15 @@ class GetPokemonRespository implements GetPokemonI {
   }
 
   @override
-  Future<List<CategoryModel?>> getCategory() async {
-    List<CategoryModel> model = [
-      CategoryModel(name: 'Fogo', url: ""),
-      CategoryModel(name: 'Normal', url: ""),
-      CategoryModel(name: 'Ar', url: ""),
-      CategoryModel(name: 'Terra', url: ""),
-      CategoryModel(name: 'Pedra', url: "")
-    ];
-    print(model);
-    return model;
+  Future<List<ResultType?>> getCategory() async {
+    try {
+      final response = await connect.get(BaseUrl.typeApi);
+      final convert = response.body;
+      print(convert);
+      List<ResultType?> model = [];
+      return model;
+    } catch (e) {
+      return [];
+    }
   }
 }
