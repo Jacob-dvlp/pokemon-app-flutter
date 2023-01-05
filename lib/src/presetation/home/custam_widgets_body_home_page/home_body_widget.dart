@@ -19,7 +19,7 @@ class HomeHeaderWidgetCard extends GetView<HomeController> {
           child: Stack(
             children: [
               const CustomWidgetCardSearchPokemon(),
-              const CustomWidgetListPokemon(),
+              CustomWidgetListPokemon(controller: controller),
               CustomWidgetTypePokemon(
                 controller: controller,
               ),
