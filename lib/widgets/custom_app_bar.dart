@@ -10,27 +10,32 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double right = 20;
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(top: 8.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: right),
+            padding: const EdgeInsets.only(
+              left: 32.5,
+            ),
             child: Icon(
               Icons.menu,
               color: AppTheme.colorSecundary,
             ),
           ),
-          Image.asset(
-            ImageKey.logo,
+          Padding(
+            padding: const EdgeInsets.only(left: 74.5, right: 94),
+            child: Image.asset(
+              ImageKey.logo,
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: right),
+            padding: const EdgeInsets.only(
+              right: 25,
+            ),
             child: Image.asset(
               ImageKey.profileImage,
-              scale: 0.70,
             ),
           )
         ],

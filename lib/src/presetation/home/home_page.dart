@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../theme/app_theme.dart';
 import 'custam_body_widget/home_body_widget.dart';
 import 'home_controller.dart';
 
@@ -13,10 +14,8 @@ class HomePage extends GetView<HomeController> {
       init: HomeController(getPokemonProvider: Get.find()),
       builder: (controller) {
         return Scaffold(
-          body: Column(
-            children: const [HomeHeaderWidgetCard()],
-          ),
-        );
+            backgroundColor: AppTheme.colorBackgorundprimary,
+            body: const HomeHeaderWidgetCard());
       },
     );
   }
