@@ -19,8 +19,10 @@ class GetPokemonRespository implements GetPokemonI {
     List<ResultTypePokemon> modeltype = [];
     Response response = await connect.get(BaseUrl.typeApi);
     String? convertResponse = response.bodyString;
-    ResponseApi resultResponse = responseApiFromJson(convertResponse!);
-    modeltype = resultResponse.results!;
+    if (response.isOk) {
+      ResponseApi resultResponse = responseApiFromJson(convertResponse!);
+      modeltype = resultResponse.results!;
+    }
     return modeltype;
   }
 }
