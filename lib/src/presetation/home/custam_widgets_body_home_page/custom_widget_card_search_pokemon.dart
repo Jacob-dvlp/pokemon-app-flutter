@@ -6,8 +6,8 @@ import '../../../../utils/image/image_key.dart';
 import '../../../../utils/texts/contants_texts.dart';
 import '../../../../widgets/custom_app_bar.dart';
 
-class CustomWidgetCardSearch extends StatelessWidget {
-  const CustomWidgetCardSearch({Key? key}) : super(key: key);
+class CustomWidgetCardSearchPokemon extends StatelessWidget {
+  const CustomWidgetCardSearchPokemon({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

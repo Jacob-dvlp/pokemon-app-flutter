@@ -2,8 +2,7 @@ import 'package:get/get.dart';
 
 import '../../../utils/url/base_url.dart';
 import '../interface/get_pokemon_i.dart';
-import '../model/category_model.dart';
-import '../model/result_model.dart';
+import '../model/result_type_pokemon.dart';
 
 class GetPokemonRespository implements GetPokemonI {
   final GetConnect connect;
@@ -11,20 +10,17 @@ class GetPokemonRespository implements GetPokemonI {
     required this.connect,
   });
   @override
-  Future<List<ResultApi>> getPokemon() {
+  Future<List<ResultTypePokemon>> getPokemon() {
     throw UnimplementedError();
   }
 
   @override
-  Future<List<ResultType?>> getCategory() async {
-    try {
-      final response = await connect.get(BaseUrl.typeApi);
-      final convert = response.body;
-      print(convert);
-      List<ResultType?> model = [];
-      return model;
-    } catch (e) {
-      return [];
-    }
+  Future<List<ResultTypePokemon>> getCategory() async {
+    List<ResultTypePokemon> modeltype = [];
+    Response response = await connect.get(BaseUrl.typeApi);
+    String? convertResponse = response.bodyString;
+    ResponseApi resultResponse = responseApiFromJson(convertResponse!);
+    modeltype = resultResponse.results!;
+    return modeltype;
   }
 }

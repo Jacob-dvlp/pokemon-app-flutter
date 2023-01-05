@@ -4,7 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_theme.dart';
 
 class CustomCardCategory extends StatelessWidget {
-  const CustomCardCategory({Key? key}) : super(key: key);
+  final String name;
+  const CustomCardCategory({
+    Key? key,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class CustomCardCategory extends StatelessWidget {
           bottom: 2,
         ),
         child: Text(
-          'Normal',
+          name,
           textAlign: TextAlign.center,
           style: GoogleFonts.nunito(
               fontSize: 14,

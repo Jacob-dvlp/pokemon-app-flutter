@@ -1,5 +1,5 @@
 import '../interface/get_pokemon_i.dart';
-import '../model/category_model.dart';
+import '../model/result_type_pokemon.dart';
 
 class GetPokemonProvider {
   final GetPokemonI getPokemonI;
@@ -7,7 +7,7 @@ class GetPokemonProvider {
     required this.getPokemonI,
   });
 
-  Future<List<ResultType?>> getCategory() async {
-    return getPokemonI.getCategory();
+  Future<List<ResultTypePokemon>> getCategory() async {
+    return await getPokemonI.getCategory();
   }
 }

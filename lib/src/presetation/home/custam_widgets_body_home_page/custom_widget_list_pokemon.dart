@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../widgets/custom_card_pokemon.dart';
 
-class CustomListPokemon extends StatelessWidget {
-  const CustomListPokemon({Key? key}) : super(key: key);
+class CustomWidgetListPokemon extends StatelessWidget {
+  const CustomWidgetListPokemon({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

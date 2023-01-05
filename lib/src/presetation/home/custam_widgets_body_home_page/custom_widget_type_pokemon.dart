@@ -5,9 +5,13 @@ import '../../../../theme/app_theme.dart';
 import '../../../../utils/image/image_key.dart';
 import '../../../../utils/texts/contants_texts.dart';
 import '../../../../widgets/custom_card_category.dart';
+import '../../../infra/model/result_type_pokemon.dart';
+import '../home_controller.dart';
 
-class CustomWidgetType extends StatelessWidget {
-  const CustomWidgetType({Key? key}) : super(key: key);
+class CustomWidgetTypePokemon extends StatelessWidget {
+  final HomeController controller;
+  const CustomWidgetTypePokemon({Key? key, required this.controller})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,13 +54,15 @@ class CustomWidgetType extends StatelessWidget {
                 child: SizedBox(
                   height: 40,
                   child: ListView.builder(
-                    itemCount: 10,
+                    itemCount: controller.model.length,
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return const Padding(
-                        padding: EdgeInsets.all(7.0),
-                        child: CustomCardCategory(),
+                      final ResultTypePokemon resultApi =
+                          controller.model[index];
+                      return Padding(
+                        padding: const EdgeInsets.all(7.0),
+                        child: CustomCardCategory(name: resultApi.name!),
                       );
                     },
                   ),
