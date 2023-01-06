@@ -22,7 +22,7 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
             height: 152,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: AppTheme.colorOpacityHomePage.withAlpha(50),
+              color: AppTheme.colorOpacityHomePage.withAlpha(10),
             ),
             child: Column(
               children: [

@@ -19,6 +19,7 @@ class HomeController extends GetxController with StateMixin<dynamic> {
     try {
       //  change([], status: RxStatus.loading());
       model = await getPokemonProvider.getCategory();
+      await getPokemonProvider.getPokemon();
       //   change(model, status: RxStatus.success());
     } catch (error) {
       //  change(error, status: RxStatus.error("Erro ao buscar dados"));

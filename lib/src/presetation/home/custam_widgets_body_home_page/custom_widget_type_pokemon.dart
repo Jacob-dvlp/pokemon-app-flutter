@@ -15,6 +15,7 @@ class CustomWidgetTypePokemon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Padding(
       padding: const EdgeInsets.only(top: 250),
       child: Column(

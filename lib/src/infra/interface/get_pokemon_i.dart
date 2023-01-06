@@ -1,6 +1,7 @@
+import '../model/result_pokemon.dart';
 import '../model/result_type_pokemon.dart';
 
 abstract class GetPokemonI {
-  Future<List<ResultTypePokemon>> getPokemon();
+  Future<ResultApiPokemon> getPokemon();
   Future<List<ResultTypePokemon>> getCategory();
 }

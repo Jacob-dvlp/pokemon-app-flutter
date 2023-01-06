@@ -1,16 +1,16 @@
 import 'dart:convert';
 
-ResponseApi responseApiFromJson(String str) =>
-    ResponseApi.fromJson(json.decode(str));
+ResponseApiType responseApiTypeFromJson(String str) =>
+    ResponseApiType.fromJson(json.decode(str));
 
-class ResponseApi {
-  ResponseApi({
+class ResponseApiType {
+  ResponseApiType({
     this.results,
   });
 
   final List<ResultTypePokemon>? results;
 
-  factory ResponseApi.fromJson(Map<String, dynamic> json) => ResponseApi(
+  factory ResponseApiType.fromJson(Map<String, dynamic> json) => ResponseApiType(
         results: List<ResultTypePokemon>.from(
             json["results"].map((x) => ResultTypePokemon.fromJson(x))),
       );
