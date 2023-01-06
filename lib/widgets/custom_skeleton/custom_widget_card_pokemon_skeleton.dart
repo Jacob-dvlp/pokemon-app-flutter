@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../helpers/extension_helper.dart';
-import '../helpers/type_color.dart';
-import '../src/infra/model/result_pokemon.dart';
-import '../theme/app_theme.dart';
-import '../utils/image/image_key.dart';
-import '../utils/url/base_url.dart';
+import '../../theme/app_theme.dart';
+import '../../utils/image/image_key.dart';
 
-class CustomCardPokemon extends StatelessWidget {
-  final CardModel card;
-  const CustomCardPokemon({
-    Key? key,
-    required this.card,
-  }) : super(key: key);
+class CustomWidgetCardPokemonSkeleton extends StatelessWidget {
+  const CustomWidgetCardPokemonSkeleton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,16 +44,11 @@ class CustomCardPokemon extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
-                  width: 74.96,
-                  height: 76.69,
-                  child:  SvgPicture.network(
-                    '${BaseUrl.baseUrlImage}${card.id}.svg',
-                    semanticsLabel: 'A shark?!',
-                    placeholderBuilder: (BuildContext context) => Container(
-                        padding: const EdgeInsets.all(30.0),
-                        child: const CircularProgressIndicator()),
-                  ),
-                ),
+                    width: 74.96,
+                    height: 76.69,
+                    child: Image.asset(
+                      ImageKey.squirtle,
+                    )),
               ),
             ),
             Column(
@@ -76,7 +62,7 @@ class CustomCardPokemon extends StatelessWidget {
                       bottom: 3,
                     ),
                     child: Text(
-                      card.name!.capitalizeFirstLetter(),
+                      "Tipo",
                       style: GoogleFonts.nunito(
                           fontWeight: FontWeight.w700,
                           fontSize: 16,
@@ -91,10 +77,9 @@ class CustomCardPokemon extends StatelessWidget {
                     height: 22.64,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: setCardColor(card.type1!),
                     ),
                     child: Text(
-                      card.type1!.capitalizeFirstLetter(),
+                      "Pokemon",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.nunito(
                           fontWeight: FontWeight.w400,
@@ -109,7 +94,7 @@ class CustomCardPokemon extends StatelessWidget {
                     width: 40,
                     height: 18.11,
                     child: Text(
-                      '#${card.id}',
+                      '#Pokemon',
                       style: GoogleFonts.nunito(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,

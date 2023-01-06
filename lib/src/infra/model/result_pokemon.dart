@@ -1,99 +1,42 @@
-// To parse this JSON data, do
-//
-//     final responseApi = responseApiFromJson(jsonString);
-
 import 'dart:convert';
 
-ResultApiPokemon responseApiPokemonFromJson(String str) =>
-    ResultApiPokemon.fromJson(json.decode(str));
+CardModel responseCard(String str) =>
+    CardModel.fromJson(json.decode(str));
 
-class ResultApiPokemon {
-  int baseExperience;
-  List<Species> forms;
-  List<Ability> ability;
-  List<dynamic> heldItems;
-  int id;
-  String name;
-  int order;
-  Species species;
-  List<TypePokemon> types;
-  ResultApiPokemon(
-      {required this.baseExperience,
-      required this.forms,
-      required this.heldItems,
-      required this.id,
-      required this.name,
-      required this.order,
-      required this.species,
-      required this.types,
-      required this.ability});
-
-  factory ResultApiPokemon.fromJson(Map<String, dynamic> json) =>
-      ResultApiPokemon(
-        baseExperience: json["base_experience"],
-        forms:
-            List<Species>.from(json["forms"].map((x) => Species.fromJson(x))),
-        heldItems: List<dynamic>.from(json["held_items"].map((x) => x)),
-        id: json["id"],
-        name: json["name"],
-        order: json["order"],
-        species: Species.fromJson(json["species"]),
-        types: List<TypePokemon>.from(
-            json["types"].map((x) => TypePokemon.fromJson(x))),
-        ability: List<Ability>.from(
-            json["abilities"].map((x) => Ability.fromJson(x))),
-      );
-}
-
-class TypePokemon {
-  TypePokemon({
-    this.type,
-  });
-
-  int? slot;
-  Species? type;
-
-  factory TypePokemon.fromJson(Map<String, dynamic> json) => TypePokemon(
-        type: Species.fromJson(json["type"]),
-      );
-}
-
-class Species {
-  Species({
-    this.name,
-    this.url,
-  });
-
+class CardModel {
+  String? id;
   String? name;
-  String? url;
+  String? sprite;
+  String? type1;
+  String? type2;
 
-  factory Species.fromJson(Map<String, dynamic> json) => Species(
-        name: json["name"],
-        url: json["url"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "name": name,
-        "url": url,
-      };
-}
-
-class Ability {
-  Ability({
+  CardModel({
+    this.id,
     this.name,
-    this.url,
+    this.sprite,
+    this.type1,
+    this.type2,
   });
 
-  String? name;
-  String? url;
-
-  factory Ability.fromJson(Map<String, dynamic> json) => Ability(
-        name: json["name"],
-        url: json["url"],
+  factory CardModel.fromJson(Map<String, dynamic> json) {
+    String pokeId = json['id'].toString();
+    final List types = json['types'];
+    if (types.length == 1) {
+      return CardModel(
+        id: pokeId,
+        name: json['name'],
+        sprite: json['sprites']['front_default'],
+        type1: json['types'][0]['type']['name'],
+        type2: null,
       );
-
-  Map<String, dynamic> toJson() => {
-        "name": name,
-        "url": url,
-      };
+    } else {
+      return CardModel(
+        id: pokeId,
+        name: json['name'],
+        sprite: json['sprites']['front_default'],
+        type1: json['types'][0]['type']['name'],
+        type2: json['types'][1]['type']['name'],
+      );
+    }
+  }
 }

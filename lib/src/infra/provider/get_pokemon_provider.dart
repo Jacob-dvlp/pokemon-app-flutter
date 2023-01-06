@@ -7,7 +7,7 @@ class GetPokemonProvider {
   GetPokemonProvider({
     required this.getPokemonI,
   });
-  Future<ResultApiPokemon> getPokemon() async {
+  Future<List<CardModel>> getPokemon() async {
     return await getPokemonI.getPokemon();
   }
 

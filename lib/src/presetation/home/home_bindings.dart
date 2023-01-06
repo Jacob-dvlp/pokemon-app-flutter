@@ -7,17 +7,17 @@ import '../../infra/repository/get_pokemon_respository.dart';
 class HomeBindings implements Bindings {
   @override
   void dependencies() {
-    Get.put(GetConnect());
+    Get.lazyPut(() => GetConnect(), fenix: true);
 
     Get.lazyPut<GetPokemonI>(
-      () => GetPokemonRespository(
-        connect: Get.find(),
-      ),
-    );
+        () => GetPokemonRespository(
+              connect: Get.find(),
+            ),
+        fenix: true);
     Get.lazyPut(
-      () => GetPokemonProvider(
-        getPokemonI: Get.find(),
-      ),
-    );
+        () => GetPokemonProvider(
+              getPokemonI: Get.find(),
+            ),
+        fenix: true);
   }
 }
