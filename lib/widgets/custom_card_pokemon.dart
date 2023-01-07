@@ -98,7 +98,7 @@ class CustomCardPokemon extends StatelessWidget {
                       height: 22.64,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: setCardColor(card.type1!),
+                        color: setTypeColor(card.type1!),
                       ),
                       child: Text(
                         card.type1!.capitalizeFirstLetter(),

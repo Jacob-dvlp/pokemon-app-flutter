@@ -27,13 +27,13 @@ class AboutHeaderWidget extends StatelessWidget {
               color: AppTheme.colorSecundary,
             ),
           ),
-          color: setCardColor(pokemon.type1!).withAlpha(50),
+          color: setTypeColor(pokemon.type1!).withAlpha(50),
           isHome: false,
         ),
         Container(
           width: Get.width,
           decoration: BoxDecoration(
-            color: setCardColor(pokemon.type1!).withAlpha(50),
+            color: setTypeColor(pokemon.type1!).withAlpha(50),
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20),

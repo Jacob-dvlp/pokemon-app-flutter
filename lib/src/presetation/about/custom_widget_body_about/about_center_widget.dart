@@ -67,7 +67,7 @@ class AboutCenterWidget extends StatelessWidget {
                 ),
                 Container(
                   decoration:
-                      BoxDecoration(color: setCardColor(pokemon.type1!)),
+                      BoxDecoration(color: setTypeColor(pokemon.type1!)),
                   width: 50,
                   height: 22,
                   child: Text(

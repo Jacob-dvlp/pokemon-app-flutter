@@ -18,7 +18,7 @@ class CustomCardType extends StatelessWidget {
       width: 66.95,
       height: 24,
       decoration: BoxDecoration(
-          color: setCardColor(name), borderRadius: BorderRadius.circular(5)),
+          color: setTypeColor(name), borderRadius: BorderRadius.circular(5)),
       child: Padding(
         padding: const EdgeInsets.only(
           top: 2,

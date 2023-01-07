@@ -4,6 +4,7 @@ import '../src/presetation/about/about_bindings.dart';
 import '../src/presetation/about/about_page.dart';
 import '../src/presetation/home/home_bindings.dart';
 import '../src/presetation/home/home_page.dart';
+import '../src/presetation/navigator_bar/navigator_bar_page.dart';
 import '../src/presetation/splashscreen/splashscreen_bindings.dart';
 import '../src/presetation/splashscreen/splashscreen_page.dart';
 
@@ -23,6 +24,10 @@ abstract class AppRoutes {
       name: AboutPage.routName,
       page: () => const AboutPage(),
       binding: AboutBindings(),
+    ),
+    GetPage(
+      name: NavigatorBarPage.routName,
+      page: () => const NavigatorBarPage(),
     )
   ];
 }

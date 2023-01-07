@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../theme/app_theme.dart';
 import '../../../../utils/image/image_key.dart';
-import '../../home/home_page.dart';
+import '../../navigator_bar/navigator_bar_page.dart';
 
 class SplashscreenBodyWidget extends StatelessWidget {
   const SplashscreenBodyWidget({Key? key}) : super(key: key);
@@ -83,7 +83,7 @@ class SplashscreenBodyWidget extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Get.offAllNamed(HomePage.routName);
+                  Get.offAllNamed(NavigatorBarPage.routName);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
