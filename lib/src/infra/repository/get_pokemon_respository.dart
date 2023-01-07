@@ -30,7 +30,7 @@ class GetPokemonRespository implements GetPokemonI {
   }
 
   @override
-  Future<List<ResultTypePokemon>> getCategory() async {
+  Future<List<ResultTypePokemon>> getType() async {
     List<ResultTypePokemon> modeltype = [];
     Response response = await connect.get(BaseUrl.typeApi);
     String? convertResponse = response.bodyString;

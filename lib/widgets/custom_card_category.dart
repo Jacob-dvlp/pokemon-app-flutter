@@ -5,9 +5,9 @@ import '../helpers/extension_helper.dart';
 import '../helpers/type_color.dart';
 import '../theme/app_theme.dart';
 
-class CustomCardCategory extends StatelessWidget {
+class CustomCardType extends StatelessWidget {
   final String name;
-  const CustomCardCategory({
+  const CustomCardType({
     Key? key,
     required this.name,
   }) : super(key: key);

@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../helpers/extension_helper.dart';
+import '../../../../helpers/type_color.dart';
 import '../../../../theme/app_theme.dart';
 import '../../../../utils/image/image_key.dart';
+import '../../../infra/model/about_pokemon_model.dart';
 
 class AboutCenterWidget extends StatelessWidget {
-  const AboutCenterWidget({Key? key}) : super(key: key);
+  final Pokemon pokemon;
+  const AboutCenterWidget({
+    Key? key,
+    required this.pokemon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +30,7 @@ class AboutCenterWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Charmeleon',
+                  pokemon.name!.capitalizeFirstLetter(),
                   style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -51,7 +58,7 @@ class AboutCenterWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Cod: #0034',
+                  'Cod: #${pokemon.id}',
                   style: GoogleFonts.nunito(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
@@ -59,11 +66,12 @@ class AboutCenterWidget extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  decoration: BoxDecoration(color: AppTheme.colorAboutOrange),
+                  decoration:
+                      BoxDecoration(color: setCardColor(pokemon.type1!)),
                   width: 50,
                   height: 22,
                   child: Text(
-                    'Fogo',
+                    pokemon.type1!.capitalizeFirstLetter(),
                     textAlign: TextAlign.center,
                     style: GoogleFonts.nunito(
                       fontSize: 12,

@@ -6,10 +6,12 @@ import '../utils/image/image_key.dart';
 class CustomAppBar extends StatelessWidget {
   final Widget widget;
   final bool isHome;
+  final Color? color;
   const CustomAppBar({
     Key? key,
     required this.widget,
     required this.isHome,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -17,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 0.0),
       child: Container(
-        color:  isHome ? AppTheme.colorPrimary : AppTheme.colorBacgroundAbout ,
+        color: isHome ? AppTheme.colorPrimary : color,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

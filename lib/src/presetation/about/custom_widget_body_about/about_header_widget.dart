@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '../../../../helpers/type_color.dart';
 import '../../../../theme/app_theme.dart';
-import '../../../../utils/image/image_key.dart';
+import '../../../../utils/url/base_url.dart';
 import '../../../../widgets/custom_app_bar.dart';
+import '../../../infra/model/about_pokemon_model.dart';
 
 class AboutHeaderWidget extends StatelessWidget {
-  const AboutHeaderWidget({Key? key}) : super(key: key);
+  final Pokemon pokemon;
+  const AboutHeaderWidget({
+    Key? key,
+    required this.pokemon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +27,13 @@ class AboutHeaderWidget extends StatelessWidget {
               color: AppTheme.colorSecundary,
             ),
           ),
+          color: setCardColor(pokemon.type1!).withAlpha(50),
           isHome: false,
         ),
         Container(
-          width: 375,
+          width: Get.width,
           decoration: BoxDecoration(
-            color: AppTheme.colorBacgroundAbout,
+            color: setCardColor(pokemon.type1!).withAlpha(50),
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20),
@@ -37,7 +45,18 @@ class AboutHeaderWidget extends StatelessWidget {
               right: 86,
               top: 33,
             ),
-            child: Hero(tag: "", child: Image.asset(ImageKey.pokemonf)),
+            child: Hero(
+              tag: "",
+              child: SvgPicture.network(
+                '${BaseUrl.baseUrlImage}${pokemon.id}.svg',
+                height: 197,
+                width: 202,
+                semanticsLabel: 'A shark?!',
+                placeholderBuilder: (BuildContext context) => Container(
+                    padding: const EdgeInsets.all(30.0),
+                    child: const CircularProgressIndicator()),
+              ),
+            ),
           ),
         ),
       ],

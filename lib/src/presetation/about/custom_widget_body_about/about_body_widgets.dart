@@ -17,10 +17,10 @@ class AboutBodyWidgets extends GetView<AboutController> {
           return Scaffold(
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                AboutHeaderWidget(),
-                AboutCenterWidget(),
-                AboutFooterWidget()
+              children: [
+                AboutHeaderWidget(pokemon: controller.pokemon!),
+                AboutCenterWidget(pokemon: controller.pokemon!),
+                AboutFooterWidget(pokemon: controller.pokemon!)
               ],
             ),
           );

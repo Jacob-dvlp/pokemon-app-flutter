@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../helpers/extension_helper.dart';
 import '../../../../theme/app_theme.dart';
-import '../../../../utils/texts/contants_texts.dart';
+import '../../../infra/model/about_pokemon_model.dart';
 
 class AboutFooterWidget extends StatelessWidget {
-  const AboutFooterWidget({Key? key}) : super(key: key);
+  final Pokemon pokemon;
+  const AboutFooterWidget({
+    Key? key,
+    required this.pokemon,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +38,7 @@ class AboutFooterWidget extends StatelessWidget {
                 width: 336,
                 height: 95,
                 child: Text(
-                  ContantsTexts.decription,
+                  pokemon.description!.capitalizeFirstLetter(),
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.nunito(
                     fontSize: 14,

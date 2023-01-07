@@ -8,10 +8,12 @@ class GetPokemonProvider {
     required this.getPokemonI,
   });
   Future<List<CardModel>> getPokemon() async {
-    return await getPokemonI.getPokemon();
+    final response = await getPokemonI.getPokemon();
+    return response;
   }
 
-  Future<List<ResultTypePokemon>> getCategory() async {
-    return await getPokemonI.getCategory();
+  Future<List<ResultTypePokemon>> getType() async {
+    final response = await getPokemonI.getType();
+    return response;
   }
 }

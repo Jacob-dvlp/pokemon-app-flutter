@@ -8,6 +8,7 @@ class GetPokemonByIdProvider {
   });
 
   Future<Pokemon> getPokemonById({String? id}) async {
-    return getPokemonByIdI.getPokemonById(id: id!);
+    final response = await getPokemonByIdI.getPokemonById(id: id!);
+    return response;
   }
 }

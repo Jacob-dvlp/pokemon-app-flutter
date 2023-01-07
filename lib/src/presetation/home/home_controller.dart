@@ -27,8 +27,8 @@ class HomeController extends GetxController with StateMixin<dynamic> {
   Future getPokemon() async {
     try {
       change([], status: RxStatus.loading());
-      model = await getPokemonProvider.getCategory();
-      pokemon = await getPokemonProvider.getPokemon();   
+      model = await getPokemonProvider.getType();
+      pokemon = await getPokemonProvider.getPokemon();
       change([], status: RxStatus.success());
     } catch (e) {
       change(e, status: RxStatus.error());

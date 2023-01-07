@@ -68,8 +68,7 @@ class CustomWidgetTypePokemon extends GetView<HomeController> {
                                   controller.model[index];
                               return Padding(
                                 padding: const EdgeInsets.all(7.0),
-                                child:
-                                    CustomCardCategory(name: resultApi.name!),
+                                child: CustomCardType(name: resultApi.name!),
                               );
                             },
                           );
