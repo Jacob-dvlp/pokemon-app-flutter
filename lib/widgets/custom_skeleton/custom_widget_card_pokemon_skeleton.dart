@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../theme/app_theme.dart';
+import '../../style/app_style.dart';
 import '../../utils/image/image_key.dart';
 
 class CustomWidgetCardPokemonSkeleton extends StatelessWidget {
@@ -66,7 +66,7 @@ class CustomWidgetCardPokemonSkeleton extends StatelessWidget {
                       style: GoogleFonts.nunito(
                           fontWeight: FontWeight.w700,
                           fontSize: 16,
-                          color: AppTheme.colorSecundary),
+                          color: AppStyle.colorSecundary),
                     ),
                   ),
                 ),
@@ -84,7 +84,7 @@ class CustomWidgetCardPokemonSkeleton extends StatelessWidget {
                       style: GoogleFonts.nunito(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
-                          color: AppTheme.colorPrimary),
+                          color: AppStyle.colorPrimary),
                     ),
                   ),
                 ),
@@ -98,7 +98,7 @@ class CustomWidgetCardPokemonSkeleton extends StatelessWidget {
                       style: GoogleFonts.nunito(
                           fontWeight: FontWeight.w400,
                           fontSize: 14,
-                          color: AppTheme.colorSecundary),
+                          color: AppStyle.colorSecundary),
                     ),
                   ),
                 )

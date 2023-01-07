@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_theme.dart';
+import '../style/app_style.dart';
 import '../utils/image/image_key.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 0.0),
       child: Container(
-        color: isHome ? AppTheme.colorPrimary : color,
+        color: isHome ? AppStyle.colorPrimary : color,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

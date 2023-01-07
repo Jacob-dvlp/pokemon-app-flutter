@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:skeleton_loader/skeleton_loader.dart';
 
-import '../../../../theme/app_theme.dart';
+import '../../../../style/app_style.dart';
 import '../../../../utils/image/image_key.dart';
 import '../../../../utils/texts/contants_texts.dart';
 import '../../../../widgets/custom_card_category.dart';
@@ -33,7 +33,7 @@ class CustomWidgetTypePokemon extends GetView<HomeController> {
                 child: Text(
                   ContantsTexts.textTipoHeaderHome3,
                   style: GoogleFonts.nunito(
-                    color: AppTheme.colorSecundary,
+                    color: AppStyle.colorSecundary,
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
@@ -89,7 +89,7 @@ class CustomWidgetTypePokemon extends GetView<HomeController> {
                     child: Text(
                       ContantsTexts.textTipoHeaderHome4,
                       style: GoogleFonts.nunito(
-                        color: AppTheme.colorSecundary,
+                        color: AppStyle.colorSecundary,
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                       ),

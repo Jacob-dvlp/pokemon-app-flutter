@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../theme/app_theme.dart';
+import '../../../../style/app_style.dart';
 import '../../../../utils/image/image_key.dart';
 import '../../../../utils/texts/contants_texts.dart';
 import '../../../../widgets/custom_app_bar.dart';
@@ -17,7 +17,7 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
           child: CustomAppBar(
             widget: Icon(
               Icons.menu,
-              color: AppTheme.colorSecundary,
+              color: AppStyle.colorSecundary,
             ),
             isHome: true,
           ),
@@ -28,7 +28,7 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
             height: 152,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: AppTheme.colorOpacityHomePage.withAlpha(10),
+              color: AppStyle.colorOpacityHomePage.withAlpha(10),
             ),
             child: Column(
               children: [
@@ -45,7 +45,7 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                           Text(
                             ContantsTexts.cartTextHeaderHome1,
                             style: GoogleFonts.nunito(
-                              color: AppTheme.colorSecundary,
+                              color: AppStyle.colorSecundary,
                               fontSize: 18,
                               fontWeight: FontWeight.w700,
                             ),
@@ -57,7 +57,7 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                               child: Text(
                                 ContantsTexts.cardTextHeaderHome2,
                                 style: GoogleFonts.nunito(
-                                  color: AppTheme.colorSecundary,
+                                  color: AppStyle.colorSecundary,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
                                 ),
@@ -75,9 +75,9 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                                       decoration: BoxDecoration(boxShadow: [
                                         BoxShadow(
                                             color:
-                                                AppTheme.colorContainerPrimary,
+                                                AppStyle.colorContainerPrimary,
                                             blurRadius: 25)
-                                      ], color: AppTheme.colorPrimary),
+                                      ], color: AppStyle.colorPrimary),
                                       width: 122.6,
                                       height: 31,
                                       child: Container(
@@ -94,7 +94,7 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       boxShadow: [
                                         BoxShadow(
-                                            color: AppTheme.colorBackgorundRed,
+                                            color: AppStyle.colorBackgorundRed,
                                             blurRadius: 25.0)
                                       ],
                                     ),
@@ -104,11 +104,11 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                                           topRight: Radius.circular(5),
                                           bottomRight: Radius.circular(5),
                                         ),
-                                        color: AppTheme.colorBackgorundRed,
+                                        color: AppStyle.colorBackgorundRed,
                                       ),
                                       child: Icon(
                                         Icons.search_outlined,
-                                        color: AppTheme.colorBackgorundprimary,
+                                        color: AppStyle.colorBackgorundprimary,
                                       ),
                                     ),
                                   )

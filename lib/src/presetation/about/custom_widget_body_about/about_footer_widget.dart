@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../helpers/extension_helper.dart';
-import '../../../../theme/app_theme.dart';
+import '../../../../style/app_style.dart';
 import '../../../../widgets/custom_pokestats.dart';
 import '../../../infra/model/about_pokemon_model.dart';
 
@@ -26,7 +26,7 @@ class AboutFooterWidget extends StatelessWidget {
               style: GoogleFonts.nunito(
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
-                color: AppTheme.colorAboutText,
+                color: AppStyle.colorAboutText,
               ),
             ),
           ),
@@ -43,7 +43,7 @@ class AboutFooterWidget extends StatelessWidget {
                   style: GoogleFonts.nunito(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.colorSecundary,
+                    color: AppStyle.colorSecundary,
                   ),
                 )),
           ),

@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../helpers/extension_helper.dart';
 import '../helpers/type_color.dart';
-import '../theme/app_theme.dart';
+import '../style/app_style.dart';
 
 class CustomCardType extends StatelessWidget {
   final String name;
@@ -30,7 +30,7 @@ class CustomCardType extends StatelessWidget {
           style: GoogleFonts.nunito(
               fontSize: 14,
               fontWeight: FontWeight.w400,
-              color: AppTheme.colorPrimary),
+              color: AppStyle.colorPrimary),
         ),
       ),
     );

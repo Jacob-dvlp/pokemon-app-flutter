@@ -7,7 +7,7 @@ import '../helpers/extension_helper.dart';
 import '../helpers/type_color.dart';
 import '../src/infra/model/result_pokemon.dart';
 import '../src/presetation/about/about_page.dart';
-import '../theme/app_theme.dart';
+import '../style/app_style.dart';
 import '../utils/image/image_key.dart';
 import '../utils/url/base_url.dart';
 
@@ -87,7 +87,7 @@ class CustomCardPokemon extends StatelessWidget {
                         style: GoogleFonts.nunito(
                             fontWeight: FontWeight.w700,
                             fontSize: 16,
-                            color: AppTheme.colorSecundary),
+                            color: AppStyle.colorSecundary),
                       ),
                     ),
                   ),
@@ -106,7 +106,7 @@ class CustomCardPokemon extends StatelessWidget {
                         style: GoogleFonts.nunito(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
-                            color: AppTheme.colorPrimary),
+                            color: AppStyle.colorPrimary),
                       ),
                     ),
                   ),
@@ -120,7 +120,7 @@ class CustomCardPokemon extends StatelessWidget {
                         style: GoogleFonts.nunito(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
-                            color: AppTheme.colorSecundary),
+                            color: AppStyle.colorSecundary),
                       ),
                     ),
                   )

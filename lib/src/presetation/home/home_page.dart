@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../theme/app_theme.dart';
+import '../../../style/app_style.dart';
 import 'custom_widgets_body_home_page/home_body_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppTheme.colorBackgorundprimary,
+        backgroundColor: AppStyle.colorBackgorundprimary,
         body: const HomeHeaderWidgetCard());
   }
 }

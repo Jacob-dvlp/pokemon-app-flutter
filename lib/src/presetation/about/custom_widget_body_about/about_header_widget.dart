@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../helpers/type_color.dart';
-import '../../../../theme/app_theme.dart';
+import '../../../../style/app_style.dart';
 import '../../../../utils/url/base_url.dart';
 import '../../../../widgets/custom_app_bar.dart';
 import '../../../infra/model/about_pokemon_model.dart';
@@ -24,7 +24,7 @@ class AboutHeaderWidget extends StatelessWidget {
             onTap: () => Get.back(),
             child: Icon(
               Icons.arrow_back_ios_new,
-              color: AppTheme.colorSecundary,
+              color: AppStyle.colorSecundary,
             ),
           ),
           color: setTypeColor(pokemon.type1!).withAlpha(50),

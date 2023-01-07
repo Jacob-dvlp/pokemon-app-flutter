@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../helpers/type_color.dart';
 import '../src/infra/model/about_pokemon_model.dart';
-import '../theme/app_theme.dart';
+import '../style/app_style.dart';
 
 class PokeStats extends StatelessWidget {
   final Pokemon pokemon;
@@ -28,7 +28,7 @@ class PokeStats extends StatelessWidget {
             label,
             style: GoogleFonts.nunito(
                 fontWeight: FontWeight.w600,
-                color: AppTheme.colorSecundary,
+                color: AppStyle.colorSecundary,
                 fontSize: 12),
           ),
           const Spacer(),
@@ -36,7 +36,7 @@ class PokeStats extends StatelessWidget {
             "${convertValue(value)}%",
             style: GoogleFonts.nunito(
                 fontWeight: FontWeight.w600,
-                color: AppTheme.colorSecundary,
+                color: AppStyle.colorSecundary,
                 fontSize: 12),
           ),
           Container(
@@ -46,7 +46,7 @@ class PokeStats extends StatelessWidget {
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(2)),
               child: LinearProgressIndicator(
-                backgroundColor: AppTheme.colorLinearbg,
+                backgroundColor: AppStyle.colorLinearbg,
                 valueColor: AlwaysStoppedAnimation<Color>(color),
                 value: value,
               ),
@@ -64,9 +64,9 @@ class PokeStats extends StatelessWidget {
       child: Column(
         children: [
           statsBar('Vida', pokemon.hp!, setTypeColor(pokemon.type1!)),
-          statsBar('Ataque', pokemon.attack!, AppTheme.colorLife),
-          statsBar('Defesa', pokemon.defense!, AppTheme.colorBackgorundRed),
-          statsBar('Velocid', pokemon.speed!, AppTheme.colorSecundary),
+          statsBar('Ataque', pokemon.attack!, AppStyle.colorLife),
+          statsBar('Defesa', pokemon.defense!, AppStyle.colorBackgorundRed),
+          statsBar('Velocid', pokemon.speed!, AppStyle.colorSecundary),
         ],
       ),
     );

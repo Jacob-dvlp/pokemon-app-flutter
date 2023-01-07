@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../theme/app_theme.dart';
+import '../home/home_page.dart';
+import 'custom_widget/custom_navigator_bar.dart';
 import 'navigator_bar_controller.dart';
 
 class NavigatorBarPage extends GetView<NavigatorBarController> {
@@ -9,14 +10,16 @@ class NavigatorBarPage extends GetView<NavigatorBarController> {
   static String routName = "/navigator-bar";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Container(
-        width: Get.width,
-        height: 57,
-        color: AppTheme.colorPrimary,
-      ),
-      body: Container(),
+    return GetBuilder<NavigatorBarController>(
+      init: NavigatorBarController(),
+      builder: (controller) {
+        return Scaffold(
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: CustomNavigatorBar(controller: controller),
+          body: controller.isHome ? const HomePage() : Container(),
+        );
+      },
     );
   }
 }

@@ -1,6 +1,7 @@
-import 'package:flutter/animation.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class AppTheme {
+class AppStyle {
   static Color colorBackgorundprimary = const Color(0XFFF8F8F8);
   static Color colorContainerPrimary = const Color(0XFFF4F4F4);
   static Color colorPrimary = const Color(0xFFFFFFFF);
@@ -12,4 +13,10 @@ class AppTheme {
   static Color colorAboutText = const Color(0XFF233674);
   static Color colorLife = const Color(0XFFC4F789);
   static Color colorLinearbg = const Color(0XFFFBFDFF);
+  static Color colorNavigatorBar = const Color(0XFFA2A9B0);
+
+  static TextStyle navigatorStyle1 = GoogleFonts.nunito(
+      fontSize: 14, fontWeight: FontWeight.w400, color: colorNavigatorBar);
+  static TextStyle navigatorStyle2 = GoogleFonts.nunito(
+      fontSize: 14, fontWeight: FontWeight.w400, color: colorSecundary);
 }

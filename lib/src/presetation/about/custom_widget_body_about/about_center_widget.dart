@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../helpers/extension_helper.dart';
 import '../../../../helpers/type_color.dart';
-import '../../../../theme/app_theme.dart';
+import '../../../../style/app_style.dart';
 import '../../../../utils/image/image_key.dart';
 import '../../../infra/model/about_pokemon_model.dart';
 
@@ -34,7 +34,7 @@ class AboutCenterWidget extends StatelessWidget {
                   style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: AppTheme.colorSecundary,
+                    color: AppStyle.colorSecundary,
                   ),
                 ),
                 Row(
@@ -62,7 +62,7 @@ class AboutCenterWidget extends StatelessWidget {
                   style: GoogleFonts.nunito(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: AppTheme.colorAboutText,
+                    color: AppStyle.colorAboutText,
                   ),
                 ),
                 Container(
@@ -76,7 +76,7 @@ class AboutCenterWidget extends StatelessWidget {
                     style: GoogleFonts.nunito(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
-                      color: AppTheme.colorPrimary,
+                      color: AppStyle.colorPrimary,
                     ),
                   ),
                 )

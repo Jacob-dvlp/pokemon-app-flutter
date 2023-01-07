@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../theme/app_theme.dart';
+import '../../../../style/app_style.dart';
 import '../../../../utils/image/image_key.dart';
 import '../../navigator_bar/navigator_bar_page.dart';
 
@@ -40,7 +40,7 @@ class SplashscreenBodyWidget extends StatelessWidget {
               text: TextSpan(
                   text: 'Explore o mundo dos ',
                   style: GoogleFonts.nunito(
-                    color: AppTheme.colorSecundary,
+                    color: AppStyle.colorSecundary,
                     fontSize: 35,
                     fontWeight: FontWeight.w700,
                   ),
@@ -48,7 +48,7 @@ class SplashscreenBodyWidget extends StatelessWidget {
                     TextSpan(
                       text: 'Pokémons',
                       style: GoogleFonts.nunito(
-                        color: AppTheme.colorBackgorundRed,
+                        color: AppStyle.colorBackgorundRed,
                         fontSize: 35,
                         fontWeight: FontWeight.w700,
                       ),
@@ -63,7 +63,7 @@ class SplashscreenBodyWidget extends StatelessWidget {
         Text(
           'Descubra todas as espécies de Pokémons',
           style: GoogleFonts.nunito(
-            color: AppTheme.colorSecundary,
+            color: AppStyle.colorSecundary,
             fontSize: 16,
             fontWeight: FontWeight.w400,
           ),
@@ -76,8 +76,8 @@ class SplashscreenBodyWidget extends StatelessWidget {
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 4,
-                  shadowColor: AppTheme.colorBackgorundRed,
-                  backgroundColor: AppTheme.colorBackgorundRed,
+                  shadowColor: AppStyle.colorBackgorundRed,
+                  backgroundColor: AppStyle.colorBackgorundRed,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
