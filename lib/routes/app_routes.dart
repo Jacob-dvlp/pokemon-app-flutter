@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../src/presetation/about/about_bindings.dart';
+import '../src/presetation/about/about_page.dart';
 import '../src/presetation/home/home_bindings.dart';
 import '../src/presetation/home/home_page.dart';
 import '../src/presetation/splashscreen/splashscreen_bindings.dart';
@@ -16,6 +18,11 @@ abstract class AppRoutes {
       name: HomePage.routName,
       page: () => const HomePage(),
       binding: HomeBindings(),
+    ),
+    GetPage(
+      name: AboutPage.routName,
+      page: () => const AboutPage(),
+      binding: AboutBindings(),
     )
   ];
 }

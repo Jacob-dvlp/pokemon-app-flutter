@@ -13,8 +13,14 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const Positioned(
-          child: CustomAppBar(),
+        Positioned(
+          child: CustomAppBar(
+            widget: Icon(
+              Icons.menu,
+              color: AppTheme.colorSecundary,
+            ),
+            isHome: true,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 109, left: 20, right: 20),

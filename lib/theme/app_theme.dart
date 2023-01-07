@@ -6,5 +6,8 @@ class AppTheme {
   static Color colorPrimary = const Color(0xFFFFFFFF);
   static Color colorSecundary = const Color(0XFF2F3E77);
   static Color colorBackgorundRed = const Color(0XFFEA686D);
+  static Color colorBacgroundAbout = const Color(0XFFF7F1F1);
   static Color colorOpacityHomePage = const Color(0XFFF1B0B3);
+  static Color colorAboutOrange = const Color(0XFFF7802A);
+  static Color colorAboutText = const Color(0XFF233674);
 }

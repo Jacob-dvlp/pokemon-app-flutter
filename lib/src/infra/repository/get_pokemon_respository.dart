@@ -12,7 +12,6 @@ class GetPokemonRespository implements GetPokemonI {
   int pokeNumber = 20;
   List<CardModel> pokemon = [];
   List<CardModel> pokeList = [];
-
   GetPokemonRespository({
     required this.connect,
   });
