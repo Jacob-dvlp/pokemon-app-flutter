@@ -10,4 +10,6 @@ class AppTheme {
   static Color colorOpacityHomePage = const Color(0XFFF1B0B3);
   static Color colorAboutOrange = const Color(0XFFF7802A);
   static Color colorAboutText = const Color(0XFF233674);
+  static Color colorLife = const Color(0XFFC4F789);
+  static Color colorLinearbg = const Color(0XFFFBFDFF);
 }

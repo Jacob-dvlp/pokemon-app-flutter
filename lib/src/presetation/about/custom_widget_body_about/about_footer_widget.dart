@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../helpers/extension_helper.dart';
 import '../../../../theme/app_theme.dart';
+import '../../../../widgets/custom_pokestats.dart';
 import '../../../infra/model/about_pokemon_model.dart';
 
 class AboutFooterWidget extends StatelessWidget {
@@ -36,7 +37,6 @@ class AboutFooterWidget extends StatelessWidget {
             ),
             child: SizedBox(
                 width: 336,
-                height: 95,
                 child: Text(
                   pokemon.description!.capitalizeFirstLetter(),
                   textAlign: TextAlign.justify,
@@ -47,7 +47,12 @@ class AboutFooterWidget extends StatelessWidget {
                   ),
                 )),
           ),
-          //  const SizedBox(child: CustomPokestats(label: "TES", value: 50))
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 15.0,
+            ),
+            child: PokeStats(pokemon: pokemon),
+          )
         ],
       ),
     );

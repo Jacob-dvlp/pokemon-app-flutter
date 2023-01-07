@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../helpers/type_color.dart';
 import '../src/infra/model/about_pokemon_model.dart';
+import '../theme/app_theme.dart';
 
-class CustomPokestats extends StatelessWidget {
-  final Pokemon? pokemon;
-  final String label;
-  final double value;
-  const CustomPokestats({
+class PokeStats extends StatelessWidget {
+  final Pokemon pokemon;
+  const PokeStats({
     Key? key,
-    this.pokemon,
-    required this.label,
-    required this.value,
+    required this.pokemon,
   }) : super(key: key);
 
-  Widget statsBar() {
+  String convertValue(value) {
+    double initValue = value * 100;
+    return initValue.toStringAsFixed(0);
+  }
+
+  Widget statsBar(String label, double value, Color color) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Row(
@@ -23,29 +26,28 @@ class CustomPokestats extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TextStyle(
-              fontWeight: FontWeight.w900,
-              color: setTypeColor(pokemon!.type1!),
-            ),
+            style: GoogleFonts.nunito(
+                fontWeight: FontWeight.w600,
+                color: AppTheme.colorSecundary,
+                fontSize: 12),
           ),
           const Spacer(),
           Text(
-            "52",
-            style: TextStyle(
-              fontWeight: FontWeight.w900,
-              color: setTypeColor(pokemon!.type1!),
-            ),
+            "${convertValue(value)}%",
+            style: GoogleFonts.nunito(
+                fontWeight: FontWeight.w600,
+                color: AppTheme.colorSecundary,
+                fontSize: 12),
           ),
           Container(
             width: 250,
             height: 10,
             margin: const EdgeInsets.only(left: 15),
             child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              borderRadius: const BorderRadius.all(Radius.circular(2)),
               child: LinearProgressIndicator(
-                backgroundColor: Colors.grey[300],
-                valueColor: AlwaysStoppedAnimation<Color>(
-                    setCardColor(pokemon!.type1!)),
+                backgroundColor: AppTheme.colorLinearbg,
+                valueColor: AlwaysStoppedAnimation<Color>(color),
                 value: value,
               ),
             ),
@@ -58,11 +60,13 @@ class CustomPokestats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 1),
       child: Column(
         children: [
-          const SizedBox(height: 15),
-          statsBar(),
+          statsBar('Vida', pokemon.hp!, setTypeColor(pokemon.type1!)),
+          statsBar('Ataque', pokemon.attack!, AppTheme.colorLife),
+          statsBar('Defesa', pokemon.defense!, AppTheme.colorBackgorundRed),
+          statsBar('Velocid', pokemon.speed!, AppTheme.colorSecundary),
         ],
       ),
     );

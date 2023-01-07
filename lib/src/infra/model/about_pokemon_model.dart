@@ -18,14 +18,7 @@ class Pokemon {
   double? spAttack;
   double? spDefense;
   String? description;
-  int? height;
-  int? weight;
   String? species;
-  String? ability1;
-  String? ability2;
-  String? ability3;
-  List? moves;
-
   Pokemon({
     this.id,
     this.name,
@@ -39,13 +32,7 @@ class Pokemon {
     this.spAttack,
     this.spDefense,
     this.description,
-    this.height,
-    this.weight,
     this.species,
-    this.ability1,
-    this.ability2,
-    this.ability3,
-    this.moves,
   });
 
   factory Pokemon.fromJson(
@@ -57,7 +44,6 @@ class Pokemon {
     int spAttack = json['stats'][3]['base_stat'];
     int spDefense = json['stats'][4]['base_stat'];
     int speed = json['stats'][5]['base_stat'];
-    // need to find more effective way to access flavor text
     List descList = secJson!['flavor_text_entries'];
     int? descIndex;
     for (int i = 0; i < descList.length; i++) {
@@ -74,15 +60,7 @@ class Pokemon {
     double? pokeSpAttack = spAttack / 100;
     double? pokespDefense = spDefense / 100;
     double? pokeSpeed = speed / 100;
-    List? abilities = json['abilities'];
-    List? types = json['types'];
-    List? movesList = json['moves'];
-    List? tempMovesList = [];
-    for (int i = 0; i < movesList!.length; i++) {
-      String? moves = json['moves'][i]['move']['name'];
-      tempMovesList.add(moves);
-    }
-
+    List? types = json['types'];    
     return Pokemon(
       id: pokeId,
       name: json['name'],
@@ -96,15 +74,7 @@ class Pokemon {
       spAttack: pokeSpAttack,
       spDefense: pokespDefense,
       description: pokeDesc,
-      height: json['height'],
-      weight: json['weight'],
       species: pokeSpec,
-      ability1: json['abilities'][0]['ability']['name'],
-      ability2:
-          abilities!.length >= 2 ? json['abilities'][1]['ability']['name'] : '',
-      ability3:
-          abilities.length >= 3 ? json['abilities'][2]['ability']['name'] : '',
-      moves: tempMovesList,
     );
   }
 }

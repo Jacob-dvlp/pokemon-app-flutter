@@ -18,10 +18,8 @@ class GetPokemonByIdRepository implements GetPokemonByIdI {
     Response? secResponse = await connect.get("${BaseUrl.pokemonSpecies}$id");
     String firstResponseData = firstResponse.bodyString!;
     String secondResponseData = secResponse.bodyString!;
-    print(firstResponse.statusCode);
     aboutPokemon =
         responseApiPokemon(str: firstResponseData, sec: secondResponseData);
-    print(aboutPokemon!.name!);
     return aboutPokemon!;
   }
 }
