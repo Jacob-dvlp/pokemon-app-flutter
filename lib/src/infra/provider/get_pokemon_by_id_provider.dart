@@ -1,5 +1,4 @@
-import '../interface/get_pokemon_by_id_i.dart';
-import '../model/about_pokemon_model.dart';
+import 'imports.dart';
 
 class GetPokemonByIdProvider {
   final GetPokemonByIdI getPokemonByIdI;

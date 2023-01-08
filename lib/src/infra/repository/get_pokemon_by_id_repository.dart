@@ -1,8 +1,4 @@
-import 'package:get/get.dart';
-
-import '../../../utils/url/base_url.dart';
-import '../interface/get_pokemon_by_id_i.dart';
-import '../model/about_pokemon_model.dart';
+import 'imports.dart';
 
 class GetPokemonByIdRepository implements GetPokemonByIdI {
   final GetConnect connect;

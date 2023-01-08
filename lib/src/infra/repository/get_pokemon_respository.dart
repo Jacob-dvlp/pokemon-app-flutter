@@ -1,15 +1,11 @@
-import 'package:get/get.dart';
-
-import '../../../utils/url/base_url.dart';
-import '../interface/get_pokemon_i.dart';
-import '../model/result_pokemon.dart';
-import '../model/result_type_pokemon.dart';
+import 'imports.dart';
 
 class GetPokemonRespository implements GetPokemonI {
   final GetConnect connect;
   late int pokeIndex;
 
   int pokeNumber = 20;
+  int index = 1;
   List<CardModel> pokemon = [];
   List<CardModel> pokeList = [];
   GetPokemonRespository({
@@ -17,13 +13,16 @@ class GetPokemonRespository implements GetPokemonI {
   });
   @override
   Future<List<CardModel>> getPokemon() async {
-    for (int index = 1; index < pokeNumber; index++) {
+    for (index; index <= pokeNumber; index++) {
       pokeIndex = index;
       Response? response = await connect.get("${BaseUrl.pokemonApi}$pokeIndex");
       if (response.isOk) {
         String responseData = response.bodyString!;
         pokemon.add(responseCard(responseData));
         pokeList = pokemon;
+        print(index);
+        //  index = pokemon.length;
+        ///pokeNumber = pokeNumber + index;
       }
     }
     return pokeList;

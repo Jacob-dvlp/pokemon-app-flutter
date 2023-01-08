@@ -7,40 +7,42 @@ class CustomWidgetSkeletonBodyAbout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SkeletonLoader(
-          items: 3,
-          period: const Duration(seconds: 2),
-          highlightColor: Colors.white,
-          direction: SkeletonDirection.ltr,
-          builder: Container(
-            decoration: const BoxDecoration(color: Colors.amber),
-            width: Get.width,
-            height: 150,
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SkeletonLoader(
+            items: 3,
+            period: const Duration(seconds: 2),
+            highlightColor: Colors.white,
+            direction: SkeletonDirection.ltr,
+            builder: Container(
+              decoration: const BoxDecoration(color: Colors.amber),
+              width: Get.width,
+              height: 150,
+            ),
           ),
-        ),
-        const SkeletonLoader(
-          items: 3,
-          period: Duration(seconds: 2),
-          highlightColor: Colors.white,
-          direction: SkeletonDirection.ltr,
-          builder: LinearProgressIndicator(
-            minHeight: 20,
+          const SkeletonLoader(
+            items: 3,
+            period: Duration(seconds: 2),
+            highlightColor: Colors.white,
+            direction: SkeletonDirection.ltr,
+            builder: LinearProgressIndicator(
+              minHeight: 20,
+            ),
           ),
-        ),
-        SkeletonLoader(
-          items: 3,
-          period: const Duration(seconds: 2),
-          highlightColor: Colors.white,
-          direction: SkeletonDirection.ltr,
-          builder: Container(
-            decoration: const BoxDecoration(color: Colors.amber),
-            width: Get.width,
-            height: 55,
+          SkeletonLoader(
+            items: 3,
+            period: const Duration(seconds: 2),
+            highlightColor: Colors.white,
+            direction: SkeletonDirection.ltr,
+            builder: Container(
+              decoration: const BoxDecoration(color: Colors.amber),
+              width: Get.width,
+              height: 55,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

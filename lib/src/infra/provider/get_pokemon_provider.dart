@@ -1,6 +1,4 @@
-import '../interface/get_pokemon_i.dart';
-import '../model/result_pokemon.dart';
-import '../model/result_type_pokemon.dart';
+import 'imports.dart';
 
 class GetPokemonProvider {
   final GetPokemonI getPokemonI;

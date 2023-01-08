@@ -1,12 +1,4 @@
-import 'package:get/get.dart';
-
-import '../src/presetation/about/about_bindings.dart';
-import '../src/presetation/about/about_page.dart';
-import '../src/presetation/home/home_bindings.dart';
-import '../src/presetation/home/home_page.dart';
-import '../src/presetation/navigator_bar/navigator_bar_page.dart';
-import '../src/presetation/splashscreen/splashscreen_bindings.dart';
-import '../src/presetation/splashscreen/splashscreen_page.dart';
+import 'importes.dart';
 
 abstract class AppRoutes {
   static final List<GetPage> pages = [
@@ -14,6 +6,10 @@ abstract class AppRoutes {
       name: SplashscreenPage.routName,
       page: () => const SplashscreenPage(),
       binding: SplashscreenBindings(),
+    ),
+    GetPage(
+      name: NavigatorBarPage.routName,
+      page: () => const NavigatorBarPage(),
     ),
     GetPage(
       name: HomePage.routName,
@@ -26,8 +22,9 @@ abstract class AppRoutes {
       binding: AboutBindings(),
     ),
     GetPage(
-      name: NavigatorBarPage.routName,
-      page: () => const NavigatorBarPage(),
+      name: FavoritePage.routName,
+      page: () => const FavoritePage(),
+      binding: FavoriteBindings(),
     )
   ];
 }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../routes/importes.dart';
 import '../../../../style/app_style.dart';
 import '../../../../utils/image/image_key.dart';
 import '../../../../utils/texts/contants_texts.dart';
 import '../../../../widgets/custom_app_bar.dart';
+import '../home_controller.dart';
 
 class CustomWidgetCardSearchPokemon extends StatelessWidget {
   const CustomWidgetCardSearchPokemon({Key? key}) : super(key: key);
@@ -87,6 +89,17 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                                             bottomLeft: Radius.circular(5),
                                           ),
                                         ),
+                                        child: SizedBox(
+                                            child: GetBuilder<HomeController>(
+                                          init: HomeController(
+                                            getPokemonProvider: Get.find(),
+                                          ),
+                                          builder: (controller) {
+                                            return TextField(
+                                              controller: controller.textSearch,
+                                            );
+                                          },
+                                        )),
                                       )),
                                   Container(
                                     width: 40,

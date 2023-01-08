@@ -1,12 +1,12 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../helpers/type_color.dart';
 import '../../../../style/app_style.dart';
-import '../../../../utils/url/base_url.dart';
 import '../../../../widgets/custom_app_bar.dart';
-import '../../../infra/model/about_pokemon_model.dart';
+import '../../../infra/repository/imports.dart';
+
 
 class AboutHeaderWidget extends StatelessWidget {
   final Pokemon pokemon;

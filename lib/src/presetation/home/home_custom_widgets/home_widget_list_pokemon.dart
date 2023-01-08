@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:skeleton_loader/skeleton_loader.dart';
 
+import '../../../../routes/importes.dart';
 import '../../../../widgets/custom_card_pokemon.dart';
 import '../../../../widgets/custom_skeleton/custom_widget_card_pokemon_skeleton.dart';
-import '../../../infra/model/result_pokemon.dart';
+import '../../../infra/interface/imports.dart';
 import '../home_controller.dart';
 
 class CustomWidgetListPokemon extends GetView<HomeController> {
@@ -26,7 +26,10 @@ class CustomWidgetListPokemon extends GetView<HomeController> {
               return SizedBox(
                 height: 300,
                 child: GridView.builder(
-                  itemCount: controller.pokemon.length,
+                  controller: controller.controller,
+                  itemCount: controller.pokemonSearch.isEmpty
+                      ? controller.pokemon.length
+                      : controller.pokemonSearch.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisSpacing: controller.mainAxisSpacing,
                     crossAxisSpacing: controller.crossAxisSpacing,
@@ -34,7 +37,9 @@ class CustomWidgetListPokemon extends GetView<HomeController> {
                     crossAxisCount: controller.crossAxisCount,
                   ),
                   itemBuilder: (context, index) {
-                    final CardModel card = controller.pokemon[index];
+                    final CardModel card = controller.pokemonSearch.isEmpty
+                        ? controller.pokemon[index]
+                        : controller.pokemonSearch[index];
                     return CustomCardPokemon(
                       card: card,
                     );
@@ -43,13 +48,17 @@ class CustomWidgetListPokemon extends GetView<HomeController> {
               );
             },
             onLoading: const SkeletonGridLoader(
-              builder: SizedBox(
-                child: CustomWidgetCardPokemonSkeleton()),
+              builder: SizedBox(child: CustomWidgetCardPokemonSkeleton()),
               items: 9,
               itemsPerRow: 2,
               highlightColor: Colors.white,
               direction: SkeletonDirection.ltr,
               childAspectRatio: 1,
+            ),
+            onError: (error) => Center(
+              child: Text(
+                error.toString(),
+              ),
             ),
           ),
         );

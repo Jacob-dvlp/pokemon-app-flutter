@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 Color setTypeColor(String type) {
   type = type.toLowerCase();
-
   switch (type) {
     case 'fire':
       return const Color(0xffF08030);
