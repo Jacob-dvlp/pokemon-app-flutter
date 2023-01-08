@@ -65,12 +65,12 @@ class CustomNavigatorBar extends StatelessWidget {
                     children: [
                       Image.asset(
                         ImageKey.iconMenuFavorite,
-                        color: controller.isFavorite
+                        color: controller.pageFavorite
                             ? AppStyle.colorSecundary
                             : AppStyle.colorNavigatorBar,
                       ),
                       Text('Favoritos',
-                          style: controller.isFavorite
+                          style: controller.pageFavorite
                               ? AppStyle.navigatorStyle2
                               : AppStyle.navigatorStyle1),
                     ],

@@ -3,9 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../helpers/extension_helper.dart';
 import '../../../../helpers/type_color.dart';
+import '../../../../routes/importes.dart';
 import '../../../../style/app_style.dart';
 import '../../../../utils/image/image_key.dart';
 import '../../../infra/model/about_pokemon_model.dart';
+import '../about_controller.dart';
 
 class AboutCenterWidget extends StatelessWidget {
   final Pokemon pokemon;
@@ -39,7 +41,22 @@ class AboutCenterWidget extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Image.asset(ImageKey.iconFavorite),
+                    GetBuilder<AboutController>(
+                      init: AboutController(Get.find(), Get.find()),
+                      builder: (controller) {
+                        return GestureDetector(
+                            onTap: () {
+                              controller.btnFavorite();
+                              controller.saveFavorite();
+                            },
+                            child: controller.pokemon!.favorite!
+                                ? Image.asset(ImageKey.iconFavorite)
+                                : const Icon(
+                                    Icons.favorite,
+                                    color: Colors.red,
+                                  ));
+                      },
+                    ),
                     const SizedBox(
                       width: 6.75,
                     ),

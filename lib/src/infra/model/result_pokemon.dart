@@ -9,7 +9,7 @@ class CardModel {
   String? sprite;
   String? type1;
   String? type2;
-
+  
   CardModel({
     this.id,
     this.name,

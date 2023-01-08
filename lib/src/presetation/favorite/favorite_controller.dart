@@ -1,17 +1,17 @@
 import 'package:get/get.dart';
 
 class FavoriteController extends GetxController {
-  bool isFavorite = true;
+  bool pageFavorite = true;
   bool isHome = false;
 
   isHomePage() {
     isHome = true;
-    isFavorite = false;
+    pageFavorite = false;
     update();
   }
 
   isFavoritePage() {
-    isFavorite = true;
+    pageFavorite = true;
     isHome = false;
     update();
   }

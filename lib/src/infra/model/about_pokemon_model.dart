@@ -19,6 +19,8 @@ class Pokemon {
   double? spDefense;
   String? description;
   String? species;
+  bool? favorite = false;
+
   Pokemon({
     this.id,
     this.name,
@@ -60,7 +62,7 @@ class Pokemon {
     double? pokeSpAttack = spAttack / 100;
     double? pokespDefense = spDefense / 100;
     double? pokeSpeed = speed / 100;
-    List? types = json['types'];    
+    List? types = json['types'];
     return Pokemon(
       id: pokeId,
       name: json['name'],

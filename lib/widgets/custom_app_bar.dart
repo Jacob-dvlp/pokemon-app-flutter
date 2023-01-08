@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../style/app_style.dart';
 import '../utils/image/image_key.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -17,30 +16,18 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 0.0),
+      padding: const EdgeInsets.only(top: 0, left: 32.99, right: 25),
       child: Container(
-        color: isHome ? AppStyle.colorPrimary : color,
+        color: isHome ? Colors.transparent : color,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Padding(
-                padding: const EdgeInsets.only(
-                  left: 32.5,
-                ),
-                child: widget),
-            Padding(
-              padding: const EdgeInsets.only(left: 74.5, right: 94),
-              child: Image.asset(
-                ImageKey.logo,
-              ),
+            widget,
+            Image.asset(
+              ImageKey.logo,
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                right: 25,
-              ),
-              child: Image.asset(
-                ImageKey.profileImage,
-              ),
+            Image.asset(
+              ImageKey.profileImage,
             )
           ],
         ),

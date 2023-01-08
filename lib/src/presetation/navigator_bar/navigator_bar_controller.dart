@@ -2,16 +2,16 @@ import 'package:get/get.dart';
 
 class NavigatorBarController extends GetxController {
   bool isHome = true;
-  bool isFavorite = false;
+  bool pageFavorite = false;
 
   isHomePage() {
     isHome = true;
-    isFavorite = false;
+    pageFavorite = false;
     update();
   }
 
   isFavoritePage() {
-    isFavorite = true;
+    pageFavorite = true;
     isHome = false;
     update();
   }

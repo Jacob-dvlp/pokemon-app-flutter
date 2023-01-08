@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../routes/importes.dart';
@@ -15,7 +14,7 @@ class AboutBodyWidgets extends GetView<AboutController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<AboutController>(
-      init: AboutController(Get.find()),
+      init: AboutController(Get.find(), Get.find()),
       builder: (controller) {
         return Scaffold(
           floatingActionButtonLocation:

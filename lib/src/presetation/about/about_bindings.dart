@@ -1,6 +1,11 @@
+import 'package:get_storage/get_storage.dart';
+
 import '../../../routes/importes.dart';
+import '../../infra/interface/favorite_pokemon_i.dart';
 import '../../infra/interface/get_pokemon_by_id_i.dart';
+import '../../infra/provider/favorite_pokemon_provider.dart';
 import '../../infra/provider/get_pokemon_by_id_provider.dart';
+import '../../infra/repository/favorite_pokemon_repository.dart';
 import '../../infra/repository/get_pokemon_by_id_repository.dart';
 import 'about_controller.dart';
 
@@ -11,9 +16,10 @@ class AboutBindings implements Bindings {
       () => GetConnect(),
     );
     Get.lazyPut(
-      () => AboutController(
-        Get.find(),
-      ),
+      () => GetStorage(),
+    );
+    Get.lazyPut(
+      () => AboutController(Get.find(), Get.find()),
     );
     Get.lazyPut<GetPokemonByIdI>(
       () => GetPokemonByIdRepository(
@@ -23,6 +29,16 @@ class AboutBindings implements Bindings {
     Get.lazyPut(
       () => GetPokemonByIdProvider(
         getPokemonByIdI: Get.find(),
+      ),
+    );
+    Get.lazyPut<FavoritePokemonI>(
+      () => FavoritePokemonRepository(
+        getStorage: Get.find(),
+      ),
+    );
+    Get.lazyPut(
+      () => FavoritePokemonProvider(
+        favoritePokemonI: Get.find(),
       ),
     );
   }
