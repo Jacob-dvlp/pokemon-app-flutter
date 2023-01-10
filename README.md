@@ -13,27 +13,27 @@
 
 ## 📚  FUNCIONALIDADES
 
- ⚙ -- Dentro do Aplicativo é possivel buscar um pokemon no campo de pesquisa.
- ⚙ -- dentro do APlicativo é possivel simular favoritar um pokemon.
+ ⚙ -- Dentro do Aplicativo é possivel buscar um pokemon no campo de pesquisa <br>
+ ⚙ -- dentro do APlicativo é possivel simular favoritar um pokemon.<br>
  ⚙ -- Dentro do APlicativo é possivel  compartilhar um pokemon com outras 
- pessoas.    
- ⚙ -- Também foi aplicado a paginaçao ao buscar os pokemon na API.
+ pessoas.    <br>
+ ⚙ -- Também foi aplicado a paginaçao ao buscar os pokemon na API.<br>
 ## 📚  CONCEITOS APLICADO NO CODIGO
-  ⚙ -- Neste  código também foi aplicado alguns conceitos de SOLID com ajuda de GetX 
+  ⚙ -- Neste  código também foi aplicado alguns conceitos de SOLID com ajuda de GetX  <br>
  
 
 ## Obs:
- Nesse aplicativo foi usado o gerenciadores de estado GetX com a finalidade de ter a melhor gerencia de (Injeçao de dependencias, gerenciamento de estado, e gerenciamento de rotas) e também o GetX tem a ferramenta para consumir API o (Getconnet) foi este Client que usei para consumir a API de pokemon.  
+ Nesse aplicativo foi usado o gerenciadores de estado GetX com a finalidade de  ter a melhor gerencia de (Injeçao de dependencias, gerenciamento de estado, e gerenciamento de rotas) e também o GetX tem a ferramenta para consumir API o (Getconnet) foi este Client que usei para consumir a API de pokemon.  
  
 <br>
 ## 🛠 Pacotes utilizados <br>  
 ⚙ get: ^4.6.5 <br>  
 ⚙ flutter_responsivity_widget <br>
 ⚙ cached_network_image: ^3.2.0 <br>
-⚙ skeleton_loader: ^2.0.0+4
-⚙ flutter_svg  
-⚙ share_plus: ^6.3.0
-⚙ google_fonts: ^3.0.1
+⚙ skeleton_loader: ^2.0.0+4 <br>
+⚙ flutter_svg  <br>
+⚙ share_plus: ^6.3.0 <br>
+⚙ google_fonts: ^3.0.1 <br>
 
 
 <br>
