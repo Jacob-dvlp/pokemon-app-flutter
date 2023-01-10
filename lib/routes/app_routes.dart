@@ -1,3 +1,4 @@
+import '../src/infra/interface/imports.dart';
 import 'importes.dart';
 
 abstract class AppRoutes {
@@ -17,9 +18,9 @@ abstract class AppRoutes {
       binding: HomeBindings(),
     ),
     GetPage(
-      name: AboutPage.routName,
-      page: () => const AboutPage(),
-      binding: AboutBindings(),
+      name: DetailPage.routName,
+      page: () => const DetailPage(),
+      binding: DetailBindings(),
     ),
     GetPage(
       name: FavoritePage.routName,

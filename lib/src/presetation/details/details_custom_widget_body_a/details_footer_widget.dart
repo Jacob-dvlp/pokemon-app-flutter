@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../helpers/extension_helper.dart';
+import '../../../../routes/importes.dart';
 import '../../../../style/app_style.dart';
 import '../../../../widgets/custom_pokestats.dart';
-import '../../../infra/model/about_pokemon_model.dart';
+import '../../../infra/model/model_result_details_pokemon.dart';
 
 class AboutFooterWidget extends StatelessWidget {
   final Pokemon pokemon;
@@ -20,7 +21,7 @@ class AboutFooterWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 18, bottom: 7, top: 17),
+            padding: const EdgeInsets.only(left: 18, bottom: 7, top: 5),
             child: Text(
               'Descriçāo',
               style: GoogleFonts.nunito(
@@ -36,12 +37,12 @@ class AboutFooterWidget extends StatelessWidget {
               right: 18.0,
             ),
             child: SizedBox(
-                width: 336,
+                width: Get.width,
                 child: Text(
                   pokemon.description!.capitalizeFirstLetter(),
-                  textAlign: TextAlign.justify,
+                  textAlign: TextAlign.left,
                   style: GoogleFonts.nunito(
-                    fontSize: 14,
+                    fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: AppStyle.colorSecundary,
                   ),
@@ -52,7 +53,7 @@ class AboutFooterWidget extends StatelessWidget {
               top: 15.0,
             ),
             child: PokeStats(pokemon: pokemon),
-          )
+          ),
         ],
       ),
     );

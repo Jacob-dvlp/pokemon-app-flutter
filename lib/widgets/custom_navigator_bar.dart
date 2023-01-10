@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../../../../style/app_style.dart';
 import '../../../../utils/image/image_key.dart';
 import '../src/presetation/favorite/favorite_page.dart';
-import '../src/presetation/navigator_bar/navigator_bar_page.dart';
 
 class CustomNavigatorBar extends StatelessWidget {
   final dynamic controller;
@@ -20,7 +19,7 @@ class CustomNavigatorBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Get.width,
+      width: Get.width * 200,
       height: 57,
       color: AppStyle.colorPrimary,
       child: Column(
@@ -33,11 +32,12 @@ class CustomNavigatorBar extends StatelessWidget {
                 onTap: () {
                   controller.isHomePage();
                   if (isAboutPage == true || isFavoritePage == true) {
-                    Get.offNamed(NavigatorBarPage.routName);
+                    Get.back();
                   }
                 },
                 child: SizedBox(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Image.asset(ImageKey.iconMenuHome,
                           color: controller.isHome

@@ -1,16 +1,54 @@
-# pokemon_app
+## APLICATIVO POKEMON
 
-A new Flutter project.
 
-## Getting Started
+<b>Objectivo desse app </b>   
 
-This project is a starting point for a Flutter application.
+<p> Este aplicativo  tem como objetivo Listar os Pokemons  e partilhar  com os amigos
 
-A few resources to get you started if this is your first Flutter project:
+## 📚 Telas que fazem parte do aplicativo.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+ ⚙ --Home tela que  lista todos os pokemons <br>
+ ⚙ --Detalhes tela que lista detalhes do pokemon  <br>
+ ⚙ --Splash screen tela inicial <br>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📚  FUNCIONALIDADES
+
+ ⚙ -- Dentro do Aplicativo é possivel buscar um pokemon no campo de pesquisa.
+ ⚙ -- dentro do APlicativo é possivel simular favoritar um pokemon.
+ ⚙ -- Dentro do APlicativo é possivel  compartilhar um pokemon com outras 
+ pessoas.    
+ ⚙ -- Também foi aplicado a paginaçao ao buscar os pokemon na API.
+## 📚  CONCEITOS APLICADO NO CODIGO
+  ⚙ -- Neste  código também foi aplicado alguns conceitos de SOLID com ajuda de GetX 
+ 
+
+## Obs:
+ Nesse aplicativo foi usado o gerenciadores de estado GetX com a finalidade de ter a melhor gerencia de (Injeçao de dependencias, gerenciamento de estado, e gerenciamento de rotas) e também o GetX tem a ferramenta para consumir API o (Getconnet) foi este Client que usei para consumir a API de pokemon.  
+ 
+<br>
+## 🛠 Pacotes utilizados <br>  
+⚙ get: ^4.6.5 <br>  
+⚙ flutter_responsivity_widget <br>
+⚙ cached_network_image: ^3.2.0 <br>
+⚙ skeleton_loader: ^2.0.0+4
+⚙ flutter_svg  
+⚙ share_plus: ^6.3.0
+⚙ google_fonts: ^3.0.1
+
+
+<br>
+
+ ## obs.: Para o funcionamento Do projecto deves configurar do ambiente de flutter ou se  o ambiente de flutter  estive configurado deves executar os seguintes comandos:
+
+ <br>
+ ⚙ -- flutter pub get <br>
+ #fazer o donwload dos pacotes <br>
+ ⚙ -- flutter run ou F5 <br>
+ #Executar o projeto pelo Android Studio ou Visual Studio code <br>
+ 
+ 
+
+
+
+
+ 

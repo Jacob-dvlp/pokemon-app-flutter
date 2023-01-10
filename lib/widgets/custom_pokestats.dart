@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../helpers/type_color.dart';
-import '../src/infra/model/about_pokemon_model.dart';
+import '../src/infra/model/model_result_details_pokemon.dart';
 import '../style/app_style.dart';
 
 class PokeStats extends StatelessWidget {

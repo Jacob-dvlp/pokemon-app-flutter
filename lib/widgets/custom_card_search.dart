@@ -2,35 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_responsivity_widget/flutter_responsivity_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../routes/importes.dart';
-import '../../../../style/app_style.dart';
-import '../../../../utils/image/image_key.dart';
-import '../../../../utils/texts/contants_texts.dart';
-import '../../../../widgets/custom_app_bar.dart';
-import '../home_controller.dart';
+import '../routes/importes.dart';
+import '../src/presetation/home/home_controller.dart';
+import '../style/app_style.dart';
+import '../utils/image/image_key.dart';
+import '../utils/texts/contants_texts.dart';
 
-class CustomWidgetCardSearchPokemon extends StatelessWidget {
-  const CustomWidgetCardSearchPokemon({Key? key}) : super(key: key);
+class CustomCardSearch extends StatelessWidget {
+  const CustomCardSearch({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final responsive = Responsive(context);
     return Stack(
       children: [
-        Positioned(
-          child: CustomAppBar(
-            widget: Icon(
-              Icons.menu,
-              color: AppStyle.colorSecundary,
-            ),
-            isHome: true,
-          ),
-        ),
         Padding(
-          padding: const EdgeInsets.only(top: 109, left: 20, right: 20),
+          padding: const EdgeInsets.only(top: 19, left: 20, right: 20),
           child: Container(
             width: responsive.wp(200),
-            height: 152,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: AppStyle.colorOpacityHomePage.withAlpha(20),
@@ -39,7 +28,7 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(
-                    top: 15.0,
+                    top: 27.0,
                     left: 14.0,
                   ),
                   child: Row(
@@ -57,10 +46,9 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding:
-                                const EdgeInsets.only(bottom: 10, right: 10),
+                            padding: const EdgeInsets.only(top: 5, right: 15),
                             child: SizedBox(
-                              width: responsive.wp(55),
+                              width: responsive.wp(45),
                               child: Text(
                                 ContantsTexts.cardTextHeaderHome2,
                                 style: GoogleFonts.nunito(
@@ -85,7 +73,7 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                                                 AppStyle.colorContainerPrimary,
                                             blurRadius: 25)
                                       ], color: AppStyle.colorPrimary),
-                                      width: responsive.wp(34),
+                                      width: responsive.wp(22),
                                       height: 31,
                                       child: Container(
                                         decoration: const BoxDecoration(
@@ -144,7 +132,7 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                         ),
                         child: Image.asset(
                           // height: responsive.dp(12),
-                          width: responsive.wp(21),
+                          width: responsive.wp(25),
                           ImageKey.imagePokemon,
                           fit: BoxFit.cover,
                         ),
@@ -154,13 +142,6 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ),
-        Positioned(
-          right: 0,
-          top: 95,
-          child: Image.asset(
-            ImageKey.backgroundHome1,
           ),
         ),
         Positioned(

@@ -1,5 +1,4 @@
-export '../interface/get_pokemon_by_id_i.dart';
 export '../interface/get_pokemon_i.dart';
-export '../model/about_pokemon_model.dart';
-export '../model/result_pokemon.dart';
-export '../model/result_type_pokemon.dart';
+export '../model/model_result_details_pokemon.dart';
+export '../model/model_result_pokemon.dart';
+export '../model/model_result_type_pokemon.dart';

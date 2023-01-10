@@ -2,10 +2,14 @@ import '../../../routes/importes.dart';
 import '../../infra/interface/get_pokemon_i.dart';
 import '../../infra/provider/provider_get_pokemon.dart';
 import '../../infra/repository/respository_get_pokemon.dart';
-class HomeBindings implements Bindings {
+import 'details_controller.dart';
+
+class DetailBindings implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => GetConnect(), fenix: true);
+    Get.lazyPut(
+      () => DetailController(Get.find()),
+    );
 
     Get.lazyPut<GetPokemonI>(
         () => GetPokemonRespository(

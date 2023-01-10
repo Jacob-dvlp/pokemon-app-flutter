@@ -9,7 +9,12 @@ class FavoriteCustomPages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
-      children: const [CustomAppBar(widget: Icon(Icons.menu), isHome: false)],
+      children: const [
+        CustomAppBar(widget: Icon(Icons.menu), isHome: false),
+        Center(
+          child: Text('Sem conteúdos'),
+        )
+      ],
     ));
   }
 }

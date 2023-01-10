@@ -1,26 +1,46 @@
 import 'package:flutter/cupertino.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../routes/importes.dart';
 import '../../infra/interface/imports.dart';
-import '../../infra/provider/get_pokemon_provider.dart';
+import '../../infra/provider/provider_get_pokemon.dart';
 
 class HomeController extends GetxController with StateMixin<dynamic> {
   final GetPokemonProvider getPokemonProvider;
+  HomeController get to => Get.find();
   final textSearch = TextEditingController();
-  ScrollController controller = ScrollController();
   bool isLoading = true;
   double mainAxisSpacing = 2;
   double crossAxisSpacing = 2;
-  double childAspectRatio = 1.25;
   int crossAxisCount = 2;
   List<CardModel> pokemon = [];
   List<CardModel> pokemonSearch = [];
-
   List<ResultTypePokemon> model = [];
-
+  int pageNumbercounter = 0;
+  final RefreshController _refreshController =
+      RefreshController(initialRefresh: false);
   HomeController({
     required this.getPokemonProvider,
   });
+  get refreshController => _refreshController;
+
+  void onRefresh() async {
+    await Future.delayed(const Duration(milliseconds: 1000));
+    refreshController.refreshCompleted();
+  }
+
+  onLoading() async {
+    try {
+      await getPokemonProvider.getPokemon(pageNumber: pageNumbercounter++);
+      refreshController.loadComplete();
+      update();
+    } catch (e) {
+      change(
+        e,
+        status: RxStatus.error("Erro ao buscar os dados"),
+      );
+    }
+  }
 
   Future getPokemon() async {
     try {
@@ -42,19 +62,12 @@ class HomeController extends GetxController with StateMixin<dynamic> {
       return name.contains(textSearch.text);
     }).toList();
     pokemonSearch = poke;
-
-    print(pokemonSearch);
     update();
   }
 
   @override
   void onInit() {
     getPokemon();
-    // controller.addListener(() {
-    // if (controller.position.pixels == controller.position.maxScrollExtent) {
-    // getPokemon();
-    /// }
-    //});
     textSearch.addListener(searchPokemon);
     super.onInit();
   }
