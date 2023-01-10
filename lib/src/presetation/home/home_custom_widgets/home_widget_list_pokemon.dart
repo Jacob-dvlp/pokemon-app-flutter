@@ -25,7 +25,7 @@ class CustomWidgetListPokemon extends GetView<HomeController> {
         return controller.obx(
           (state) {
             return SizedBox(
-              height: responsivel.hp(35),
+              height: responsivel.hp(75),
               child: Padding(
                   padding: const EdgeInsets.only(left: 30, right: 7.37),
                   child: SmartRefresher(
@@ -39,7 +39,7 @@ class CustomWidgetListPokemon extends GetView<HomeController> {
                       builder: (BuildContext context, LoadStatus? mode) {
                         Widget body;
                         if (mode == LoadStatus.idle) {
-                          body = const Text("Puxe para carga");
+                          body = const Text("Puxe para carregar mais");
                         } else if (mode == LoadStatus.loading) {
                           body = const CupertinoActivityIndicator();
                         } else if (mode == LoadStatus.failed) {
@@ -68,13 +68,13 @@ class CustomWidgetListPokemon extends GetView<HomeController> {
                           mainAxisSpacing: controller.mainAxisSpacing,
                           crossAxisSpacing: responsivel.width < 1074
                               ? responsivel.dp(0.15)
-                              : responsivel.dp(0.1),
+                              : 5,
                           childAspectRatio: responsivel.width < 1074
                               ? responsivel.dp(0.15)
-                              : responsivel.dp(0.1),
+                              : 2,
                           crossAxisCount: responsivel.width < 1074
                               ? controller.crossAxisCount
-                              : 1),
+                              : 2),
                       itemBuilder: (context, index) {
                         final CardModel card = controller.pokemonSearch.isEmpty
                             ? controller.pokemon[index]

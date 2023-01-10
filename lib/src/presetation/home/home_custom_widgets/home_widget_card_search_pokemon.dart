@@ -30,7 +30,7 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
           padding: const EdgeInsets.only(top: 109, left: 20, right: 20),
           child: Container(
             width: responsive.wp(200),
-            height: 152,
+            height: responsive.dp(20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: AppStyle.colorOpacityHomePage.withAlpha(20),
@@ -85,9 +85,10 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                                                 AppStyle.colorContainerPrimary,
                                             blurRadius: 25)
                                       ], color: AppStyle.colorPrimary),
-                                      width: responsive.wp(34),
-                                      height: 31,
+                                      width: responsive.wp(20),
+                                      // height: responsive.dp(3.4),
                                       child: Container(
+                                        // height: responsive.dp(34),
                                         decoration: const BoxDecoration(
                                           borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(5),
@@ -95,16 +96,19 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                                           ),
                                         ),
                                         child: SizedBox(
+                                            width: 40,
+                                            height: 30.3,
                                             child: GetBuilder<HomeController>(
-                                          init: HomeController(
-                                            getPokemonProvider: Get.find(),
-                                          ),
-                                          builder: (controller) {
-                                            return TextField(
-                                              controller: controller.textSearch,
-                                            );
-                                          },
-                                        )),
+                                              init: HomeController(
+                                                getPokemonProvider: Get.find(),
+                                              ),
+                                              builder: (controller) {
+                                                return TextField(
+                                                  controller:
+                                                      controller.textSearch,
+                                                );
+                                              },
+                                            )),
                                       )),
                                   Container(
                                     width: 40,
@@ -143,10 +147,11 @@ class CustomWidgetCardSearchPokemon extends StatelessWidget {
                           left: 2.0,
                         ),
                         child: Image.asset(
-                          // height: responsive.dp(12),
+                          //  scale: 0.1,
                           width: responsive.wp(21),
+                          height: responsive.dp(15),
                           ImageKey.imagePokemon,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.contain,
                         ),
                       )
                     ],

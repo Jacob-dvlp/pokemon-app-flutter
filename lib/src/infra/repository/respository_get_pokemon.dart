@@ -13,6 +13,7 @@ class GetPokemonRespository implements GetPokemonI {
   Future<List<CardModel>> getPokemons({int pageNumber = 0}) async {
     final response =
         await connect.get("${BaseUrl.pokemonApi}?offset=$pageNumber&limit=15");
+
     final model =
         response.body["results"].map((poke) => ModelApi.fromMap(poke)).toList();
     List<ModelApi> api = List<ModelApi>.from(model);
@@ -28,7 +29,7 @@ class GetPokemonRespository implements GetPokemonI {
     }
     return pokemon;
   }
-  
+
   @override
   Future<List<ResultTypePokemon>> getTypes() async {
     List<ResultTypePokemon> modeltype = [];
