@@ -25,7 +25,7 @@ class CustomWidgetListPokemon extends GetView<HomeController> {
         return controller.obx(
           (state) {
             return SizedBox(
-              height: responsivel.hp(75),
+              height: responsivel.hp(35),
               child: Padding(
                   padding: const EdgeInsets.only(left: 30, right: 7.37),
                   child: SmartRefresher(
