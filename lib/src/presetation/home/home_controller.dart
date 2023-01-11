@@ -7,27 +7,24 @@ import '../../infra/provider/provider_get_pokemon.dart';
 
 class HomeController extends GetxController with StateMixin<dynamic> {
   final GetPokemonProvider getPokemonProvider;
-  HomeController get to => Get.find();
   final textSearch = TextEditingController();
+  String filterTypeName = "normal";
   bool isLoading = true;
+  bool isNotFilter = false;
   double mainAxisSpacing = 2;
   double crossAxisSpacing = 2;
   int crossAxisCount = 2;
   List<CardModel> pokemon = [];
   List<CardModel> pokemonSearch = [];
-  List<ResultTypePokemon> model = [];
+  List<ResultTypePokemon> modelYpe = [];
+
   int pageNumbercounter = 0;
   final RefreshController _refreshController =
       RefreshController(initialRefresh: false);
-  HomeController({
-    required this.getPokemonProvider,
-  });
+  HomeController(
+    this.getPokemonProvider,
+  );
   get refreshController => _refreshController;
-
-  void onRefresh() async {
-    await Future.delayed(const Duration(milliseconds: 1000));
-    refreshController.refreshCompleted();
-  }
 
   onLoading() async {
     try {
@@ -45,7 +42,7 @@ class HomeController extends GetxController with StateMixin<dynamic> {
   Future getPokemon() async {
     try {
       change([], status: RxStatus.loading());
-      model = await getPokemonProvider.getType();
+      modelYpe = await getPokemonProvider.getType();
       pokemon = await getPokemonProvider.getPokemon();
       change([], status: RxStatus.success());
     } catch (e) {
@@ -56,10 +53,13 @@ class HomeController extends GetxController with StateMixin<dynamic> {
     }
   }
 
-  searchPokemon() {
+  void searchPokemon() {
     final poke = pokemon.where((poke) {
       final name = poke.name!.toLowerCase();
-      return name.contains(textSearch.text);
+      final type = poke.type1!;
+      return isNotFilter
+          ? name.contains(textSearch.text)
+          : type.contains(filterTypeName);
     }).toList();
     pokemonSearch = poke;
     update();

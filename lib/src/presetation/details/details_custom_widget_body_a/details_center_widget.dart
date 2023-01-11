@@ -9,9 +9,9 @@ import '../../../../utils/image/image_key.dart';
 import '../../../infra/repository/imports.dart';
 import '../details_controller.dart';
 
-class AboutCenterWidget extends StatelessWidget {
+class DetailsCenterWidget extends StatelessWidget {
   final Pokemon pokemon;
-  const AboutCenterWidget({
+  const DetailsCenterWidget({
     Key? key,
     required this.pokemon,
   }) : super(key: key);

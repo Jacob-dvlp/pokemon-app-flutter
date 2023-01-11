@@ -18,7 +18,7 @@ class CustomWidgetTypePokemon extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
-      init: HomeController(getPokemonProvider: Get.find()),
+      init: HomeController(Get.find()),
       builder: (controller) {
         return SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -63,16 +63,17 @@ class CustomWidgetTypePokemon extends GetView<HomeController> {
                             height: 40,
                             child: controller.obx((state) {
                               return ListView.builder(
-                                itemCount: controller.model.length,
+                                itemCount: controller.modelYpe.length,
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, index) {
                                   final ResultTypePokemon resultApi =
-                                      controller.model[index];
+                                      controller.modelYpe[index];
                                   return Padding(
                                     padding: const EdgeInsets.all(7.0),
-                                    child:
-                                        CustomCardType(name: resultApi.name!),
+                                    child: CustomCardType(
+                                      name: resultApi.name!,
+                                    ),
                                   );
                                 },
                               );

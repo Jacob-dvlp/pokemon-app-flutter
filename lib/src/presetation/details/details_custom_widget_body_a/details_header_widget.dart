@@ -42,10 +42,7 @@ class AboutHeaderWidget extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 87,
-                  right: 86,
-                  top: 33,
-                ),
+                    left: 87, right: 86, top: 33, bottom: 18),
                 child: Hero(
                   tag: "",
                   child: SvgPicture.network(

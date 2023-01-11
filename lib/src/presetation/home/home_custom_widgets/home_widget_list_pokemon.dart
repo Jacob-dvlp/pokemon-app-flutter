@@ -20,7 +20,7 @@ class CustomWidgetListPokemon extends GetView<HomeController> {
     final responsivel = Responsive(context);
 
     return GetBuilder<HomeController>(
-      init: HomeController(getPokemonProvider: Get.find()),
+      init: HomeController(Get.find()),
       builder: (controller) {
         return controller.obx(
           (state) {
@@ -29,7 +29,6 @@ class CustomWidgetListPokemon extends GetView<HomeController> {
               child: Padding(
                   padding: const EdgeInsets.only(left: 30, right: 7.37),
                   child: SmartRefresher(
-                    onRefresh: controller.onRefresh,
                     header: const WaterDropHeader(),
                     controller: controller.refreshController,
                     enablePullDown: false,
@@ -57,22 +56,19 @@ class CustomWidgetListPokemon extends GetView<HomeController> {
                       },
                     ),
                     child: GridView.builder(
-                      scrollDirection: responsivel.width < 1074
-                          ? Axis.vertical
-                          : Axis.horizontal,
                       shrinkWrap: true,
                       itemCount: controller.pokemonSearch.isEmpty
                           ? controller.pokemon.length
                           : controller.pokemonSearch.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           mainAxisSpacing: controller.mainAxisSpacing,
-                          crossAxisSpacing: responsivel.width < 1074
+                          crossAxisSpacing: responsivel.width < 2000
                               ? responsivel.dp(0.15)
                               : 5,
-                          childAspectRatio: responsivel.width < 1074
+                          childAspectRatio: responsivel.width < 2000
                               ? responsivel.dp(0.15)
                               : 2,
-                          crossAxisCount: responsivel.width < 1074
+                          crossAxisCount: responsivel.width < 2000
                               ? controller.crossAxisCount
                               : 2),
                       itemBuilder: (context, index) {

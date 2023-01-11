@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_responsivity_widget/flutter_responsivity_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../helpers/type_color.dart';
@@ -17,7 +18,8 @@ class PokeStats extends StatelessWidget {
     return initValue.toStringAsFixed(0);
   }
 
-  Widget statsBar(String label, double value, Color color) {
+  Widget statsBar(
+      Responsive reponsive, String label, double value, Color color) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Row(
@@ -40,7 +42,7 @@ class PokeStats extends StatelessWidget {
                 fontSize: 12),
           ),
           Container(
-            width: 250,
+            width: reponsive.wp(50),
             height: 10,
             margin: const EdgeInsets.only(left: 15),
             child: ClipRRect(
@@ -59,14 +61,18 @@ class PokeStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final responsive = Responsive(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 1),
       child: Column(
         children: [
-          statsBar('Vida', pokemon.hp!, setTypeColor(pokemon.type1!)),
-          statsBar('Ataque', pokemon.attack!, AppStyle.colorLife),
-          statsBar('Defesa', pokemon.defense!, AppStyle.colorBackgorundRed),
-          statsBar('Velocid', pokemon.speed!, AppStyle.colorSecundary),
+          statsBar(
+              responsive, 'Vida', pokemon.hp!, setTypeColor(pokemon.type1!)),
+          statsBar(responsive, 'Ataque', pokemon.attack!, AppStyle.colorLife),
+          statsBar(responsive, 'Defesa', pokemon.defense!,
+              AppStyle.colorBackgorundRed),
+          statsBar(
+              responsive, 'Velocid', pokemon.speed!, AppStyle.colorSecundary),
         ],
       ),
     );

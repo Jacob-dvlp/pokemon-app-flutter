@@ -7,9 +7,9 @@ import '../../../../style/app_style.dart';
 import '../../../../widgets/custom_pokestats.dart';
 import '../../../infra/model/model_result_details_pokemon.dart';
 
-class AboutFooterWidget extends StatelessWidget {
+class DetailsFooterWidget extends StatelessWidget {
   final Pokemon pokemon;
-  const AboutFooterWidget({
+  const DetailsFooterWidget({
     Key? key,
     required this.pokemon,
   }) : super(key: key);

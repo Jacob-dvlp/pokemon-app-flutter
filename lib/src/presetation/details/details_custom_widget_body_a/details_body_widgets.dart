@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_responsivity_widget/flutter_responsivity_widget.dart';
 
 import '../../../../routes/importes.dart';
 import '../../../../widgets/custom_navigator_bar.dart';
@@ -13,6 +14,7 @@ class DetailsBodyWidgets extends GetView<DetailController> {
 
   @override
   Widget build(BuildContext context) {
+    final responsive = Responsive(context);
     return GetBuilder<DetailController>(
       init: DetailController(Get.find()),
       builder: (controller) {
@@ -30,8 +32,17 @@ class DetailsBodyWidgets extends GetView<DetailController> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     AboutHeaderWidget(pokemon: controller.pokemon!),
-                    AboutCenterWidget(pokemon: controller.pokemon!),
-                    AboutFooterWidget(pokemon: controller.pokemon!)
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: responsive.isTablet ? 70 : 2),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          DetailsCenterWidget(pokemon: controller.pokemon!),
+                          DetailsFooterWidget(pokemon: controller.pokemon!),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               );

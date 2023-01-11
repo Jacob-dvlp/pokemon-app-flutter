@@ -13,10 +13,11 @@
 
 ## 📚  FUNCIONALIDADES
 
- ⚙ -- Dentro do Aplicativo é possivel buscar um pokemon no campo de pesquisa <br>
- ⚙ -- dentro do APlicativo é possivel simular favoritar um pokemon.<br>
- ⚙ -- Dentro do APlicativo é possivel  compartilhar um pokemon com outras 
- pessoas.    <br>
+ ⚙ -- Dentro do aplicativo é possivel buscar um pokemon no campo de pesquisa <br>
+ ⚙ -- Dentro do aPlicativo é possivel simular favoritar um pokemon.<br>
+ ⚙ -- Dentro do aPlicativo é possivel  compartilhar um pokemon com outras 
+ pessoas.  <br>
+ ⚙ -- Também foi aplicado a paginaçao ao buscar os pokemon na API.<br>
  ⚙ -- Também foi aplicado a paginaçao ao buscar os pokemon na API.<br>
 ## 📚  CONCEITOS APLICADO NO CODIGO
   ⚙ -- Neste  código também foi aplicado alguns conceitos de SOLID com ajuda de GetX  <br>

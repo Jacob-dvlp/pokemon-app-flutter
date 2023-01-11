@@ -19,7 +19,7 @@ class CustomCardPokemon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final resposive = Responsive(context);
+    final responsive = Responsive(context);
     return Padding(
       padding: const EdgeInsets.only(right: 7, bottom: 10.13),
       child: GestureDetector(
@@ -51,9 +51,10 @@ class CustomCardPokemon extends StatelessWidget {
                           ),
                           child: Text(
                             card.name!.capitalizeFirstLetter(),
+                            maxLines: 1,
                             style: GoogleFonts.nunito(
                                 fontWeight: FontWeight.w700,
-                                fontSize: 16,
+                                fontSize: responsive.dp(1.9),
                                 color: AppStyle.colorSecundary),
                           ),
                         ),
@@ -61,7 +62,7 @@ class CustomCardPokemon extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          width: resposive.wp(10),
+                          width: responsive.wp(10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             color: setTypeColor(card.type1!),
@@ -69,9 +70,10 @@ class CustomCardPokemon extends StatelessWidget {
                           child: Text(
                             card.type1!.capitalizeFirstLetter(),
                             textAlign: TextAlign.center,
+                            maxLines: 1,
                             style: GoogleFonts.nunito(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 14,
+                                fontSize: responsive.dp(1.4),
                                 color: AppStyle.colorPrimary),
                           ),
                         ),
@@ -85,7 +87,7 @@ class CustomCardPokemon extends StatelessWidget {
                             '#${card.id}',
                             style: GoogleFonts.nunito(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 14,
+                                fontSize: responsive.dp(1.4),
                                 color: AppStyle.colorSecundary),
                           ),
                         ),
@@ -103,8 +105,8 @@ class CustomCardPokemon extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
-                            width: resposive.wp(20),
-                            height: resposive.hp(15),
+                            width: responsive.wp(20),
+                            height: responsive.hp(15),
                             child: Image.asset(
                               ImageKey.bgImageVetor,
                             ),
@@ -117,16 +119,18 @@ class CustomCardPokemon extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(2.0),
                           child: SizedBox(
-                            width: resposive.wp(20),
-                            height: resposive.hp(15),
+                            width: responsive.wp(20),
+                            height: responsive.hp(15),
                             child: SvgPicture.network(
                               '${BaseUrl.baseUrlImage}${card.id}.svg',
                               semanticsLabel: 'A shark?!',
                               placeholderBuilder: (BuildContext context) =>
                                   Container(
-                                      padding: const EdgeInsets.all(20.0),
-                                      child: const Center(
-                                          child: CircularProgressIndicator())),
+                                padding: const EdgeInsets.all(20.0),
+                                child: const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              ),
                             ),
                           ),
                         ),

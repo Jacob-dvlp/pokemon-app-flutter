@@ -85,7 +85,7 @@ class CustomCardSearch extends StatelessWidget {
                                         child: SizedBox(
                                             child: GetBuilder<HomeController>(
                                           init: HomeController(
-                                            getPokemonProvider: Get.find(),
+                                            Get.find(),
                                           ),
                                           builder: (controller) {
                                             return TextField(
