@@ -12,7 +12,7 @@
  ⚙ --Detalhes tela que lista detalhes do pokemon  <br>
  ⚙ --Splash screen tela inicial <br>
 
-## 📚  FUNCIONALIDADES
+## 📚  FUNCIONALIDADES  
 
  ⚙ -- Dentro do aplicativo é possivel buscar um pokemon no campo de pesquisa <br>
  ⚙ -- Dentro do aplicativo é possivel simular favoritar um pokemon.<br>
