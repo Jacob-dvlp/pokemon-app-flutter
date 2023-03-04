@@ -1,4 +1,5 @@
 ## APLICATIVO POKEMON
+![normal](https://github.com/Jacob-dvlp/pokemon-app-flutter/master/demo.demo.jpeg)
 
 
 <b>Objectivo desse app </b>   
@@ -39,7 +40,8 @@
 
 <br>
 
- ## obs.: Para o funcionamento Do projecto deves configurar do ambiente de flutter ou se  o ambiente de flutter  estive configurado deves executar os seguintes comandos:
+ ## obs.:
+  Para o funcionamento Do projecto deves configurar do ambiente de flutter ou se  o ambiente de flutter  estive configurado deves executar os seguintes comandos:
 
  <br>
  ⚙ -- flutter pub get <br>

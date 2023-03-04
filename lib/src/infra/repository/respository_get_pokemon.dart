@@ -1,11 +1,11 @@
 import 'imports.dart';
 
-class GetPokemonRespository implements GetPokemonI {
+class GetPokemonrepository implements GetPokemonI {
   final GetConnect connect;
   List<CardModel> pokemon = [];
   Pokemon? detail;
 
-  GetPokemonRespository({
+  GetPokemonrepository({
     required this.connect,
   });
 
@@ -21,8 +21,8 @@ class GetPokemonRespository implements GetPokemonI {
     return await getPokemonInfs(api);
   }
 
-  Future<List<CardModel>> getPokemonInfs(List<ModelApi> pokemonList) async {
-    for (ModelApi item in pokemonList) {
+  Future<List<CardModel>> getPokemonInfs(List<ModelApi> filterList) async {
+    for (ModelApi item in filterList) {
       final response = await connect.get(item.url);
       String responseData = response.bodyString!;
       pokemon.add(responseCard(responseData));

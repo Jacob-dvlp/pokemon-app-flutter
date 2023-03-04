@@ -86,8 +86,9 @@ class SplashscreenBodyWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5),
                     ),
                   ),
-                  onPressed: () {
+                  onPressed: () { 
                     Get.offAllNamed(NavigatorBarPage.routName);
+                    
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

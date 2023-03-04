@@ -17,6 +17,7 @@ class DetailController extends GetxController with StateMixin {
       change([], status: RxStatus.loading());
       final response = await getPokemonProvider.getPokemonById(id.toString());
       pokemon = response;
+
       change([], status: RxStatus.success());
     } catch (e) {
       change(
