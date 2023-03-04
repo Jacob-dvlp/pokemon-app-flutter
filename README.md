@@ -1,5 +1,5 @@
 ## APLICATIVO POKEMON
-![normal](https://github.com/Jacob-dvlp/pokemon-app-flutter/master/demo.jpeg)
+![normal](https://github.com/Jacob-dvlp/pokemon-app-flutter/blob/master/demo.jpeg)
 
 
 <b>Objectivo desse app </b>   
