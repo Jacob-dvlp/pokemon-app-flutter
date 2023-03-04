@@ -12,7 +12,7 @@ class DetailBindings implements Bindings {
     );
 
     Get.lazyPut<GetPokemonI>(
-        () => GetPokemonRespository(
+        () => GetPokemonrepository(
               connect: Get.find(),
             ),
         fenix: true);
