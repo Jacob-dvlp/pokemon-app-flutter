@@ -39,32 +39,21 @@ class CardModel {
     }
   }
 
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'name': name,
-      'sprite': sprite,
-      'type1': type1,
-      'type2': type2,
-    };
-  }
-
-  static  CardModel? fromMap(Map<String, dynamic>? map) {
-    if (map == null ) return null; 
+  static CardModel? fromMap(Map<String, dynamic>? map) {
+    if (map == null) return null;
     try {
       return CardModel(
-      id: map['id'],
-      name: map['name'],
-      sprite: map['sprite'],
-      type1: map['type1'],
-      type2: map['type2'],
+        id: map['id'],
+        name: map['name'],
+        sprite: map['sprite'],
+        type1: map['type1'],
+        type2: map['type2'],
       );
-    }catch(e){
+    } catch (e) {
       return null;
     }
   }
 
-  String toJson() => json.encode(toMap());
-
-  static CardModel? fromJson(String source) => CardModel.fromMap(json.decode(source));
+  static CardModel? fromJson(String source) =>
+      CardModel.fromMap(json.decode(source));
 }
