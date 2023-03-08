@@ -25,7 +25,7 @@
  
 
 ## Obs:
- Nesse aplicativo foi usado o gerenciadores de estado GetX com a finalidade de  ter a melhor gerencia de (Injeçao de dependencias, gerenciamento de estado, e gerenciamento de rotas) e também o GetX tem a ferramenta para consumir API o (Getconnet) foi este Client que usei para consumir a API de pokemon.  
+ Nesse aplicativo foi usado o gerenciadores de estado GetX com a finalidade de  ter a melhor gerencia de (Injeçao de dependencias, gerenciamento de estado, e gerenciamento de rotas) e também o GetX tem a ferramenta para consumir API o Getconnet foi este Client que usei para consumir a API de pokemon.  
  
 <br>
 ## 🛠 Pacotes utilizados <br>  
