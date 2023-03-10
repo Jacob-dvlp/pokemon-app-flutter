@@ -6,7 +6,7 @@
 
 <p> Este aplicativo  tem como objetivo Listar os Pokemons  e partilhar  com os amigos
 
-## 📚 Telas que fazem parte do aplicativo.
+## 📚 Telas do aplicativo.
 
  ⚙ --Home tela que  lista todos os pokemons <br>
  ⚙ --Detalhes tela que lista detalhes do pokemon  <br>
